@@ -4,43 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 100px);
-  gap: 10px;
-}
-
-.grid-item {
-  background-color: lightblue;
-  padding: 20px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  font-weight: bold;
-}
-.grid-container1 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-}
-
-.grid-item1 {
-  background-color: lightblue;
-  padding: 20px;
-  text-align: center;
-}
-
-.span-2 {
-  grid-column: span 2;
-}
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="grid-container">
+  CSS118 <div class="grid-container">
         <div class="grid-item">1</div>
         <div class="grid-item">2</div>
         <div class="grid-item">3</div>
@@ -52,11 +19,140 @@
         <div class="grid-item">9</div>
       </div>
       <br><br>
-      <div class="grid-container1">
+      CSS119 <div class="grid-container1">
         <div class="grid-item1">Item 1</div>
-        <div class="grid-item1 span-2">Item 2</div>
+        <div class="grid-item1 span-2-cols">Item 2</div>
         <div class="grid-item1">Item 3</div>
         <div class="grid-item1">Item 4</div>
+      </div>
+      <br><br>
+      CSS120<div class="grid-container2">
+        <div class="grid-item2">1</div>
+        <div class="grid-item2">2</div>
+        <div class="grid-item2">3</div>
+        <div class="grid-item2 span-2-rows">4</div>
+        <div class="grid-item2">5</div>
+        <div class="grid-item2">6</div>
+        <div class="grid-item2">7</div>
+        <div class="grid-item2">8</div>
+        <div class="grid-item2">9</div>
+      </div>
+
+      <br><br>
+
+
+      CSS122  <div class="grid-container4">
+        <div class="header">Header</div>
+        <div class="sidebar">Sidebar</div>
+        <div class="main-content">Main Content</div>
+        <div class="footer">Footer</div>
+      </div>
+      <br><br>
+      CSS123 
+       <div class="grid-container4">
+        <div class="header">Header</div>
+        <div class="sidebar">Sidebar</div>
+        <div class="main-content">Main Content</div>
+        <div class="footer">Footer</div>
+      </div>
+      <br><br>
+
+
+   CSS124   <div class="grid-container5">
+        
+        <div class="card">
+          <img src="./assets/images/flower1.jpg" alt="Card Image">
+          <div class="card-content">
+            <h3>Card Title 1</h3>
+            <p>More details about this card.</p>
+          </div>
+          <div class="card-footer">
+            <button>Read More</button>
+          </div>
+        </div>
+      
+        
+        <div class="card">
+          <img src="./assets/images/flower2.jpg" alt="Card Image">
+          <div class="card-content">
+            <h3>Card Title 2</h3>
+            <p>More details about this card.</p>
+          </div>
+          <div class="card-footer">
+            <button>Read More</button>
+          </div>
+        </div>
+      
+        
+        <div class="card">
+          <img src="./assets/images/flower4.jpg" alt="Card Image">
+          <div class="card-content">
+            <h3>Card Title 3</h3>
+            <p>More details about this card.</p>
+          </div>
+          <div class="card-footer">
+            <button>Read More</button>
+          </div>
+        </div>
+      </div>
+      <br><br>
+      CSS125
+      <div class="grid-container6">
+        <div class="grid-item6">Item 1</div>
+        <div class="grid-item6">Item 2</div>
+        <div class="grid-item6">Item 3</div>
+        <div class="grid-item6">Item 4</div>
+        <div class="grid-item6">Item 5</div>
+        <div class="grid-item6">Item 6</div>
+      </div>
+      <br><br>
+      CSS126
+      <div class="gallery">
+        <div class="gallery-item"><img src="./assets/images/flower1.jpg"></div>
+        <div class="gallery-item"><img src="./assets/images/flower2.jpg"></div>
+        <div class="gallery-item span"><img src="./assets/images/flower3.jpg"></div>
+        <div class="gallery-item"><img src="./assets/images/flower4.jpg"></div>
+        <div class="gallery-item"><img src="./assets/images/flower5.jpg"></div>
+        <div class="gallery-item"><img src="./assets/images/flower6.jpg"></div>
+        <div class="gallery-item span"><img src="./assets/images/flower7.jpg"></div>
+        <div class="gallery-item"><img src="./assets/images/flower1.jpg"></div>
+      </div>
+      <br><br>
+      CSS127
+      <div class="dashboard">
+        <div class="header2">Dashboard Header</div>
+        <div class="sidebar2">Sidebar Menu</div>
+       
+        <div class="footer2">Footer Section</div>
+      </div>
+      <br><br>
+      CSS128
+      <div class="dashboard3">
+        <div class="header3">Dashboard Header</div>
+        <div class="sidebar3">Sidebar Menu</div>
+        <div class="main-content3">Main Content Area</div>
+        <div class="footer3">Footer Section</div>
+      </div>
+      <br><br>
+      CSS129
+      <div class="feature-grid">
+        <div class="feature-item">Feature 1</div>
+        <div class="feature-item">Feature 2</div>
+        <div class="feature-item">Feature 3</div>
+        <div class="feature-highlight">Feature 4</div>
+        <div class="feature-item">Feature 5</div>
+        <div class="feature-item">Feature 6</div>
+      </div>
+
+      <br><br>
+      CSS130
+      <div class="grid-container8">
+        <div class="grid-item">Item 1</div>
+        <div class="grid-item">Item 2</div>
+        <div class="grid-item">Item 3</div>
+        <div class="grid-item">Item 4</div>
+        <div class="grid-item">Item 5</div>
+        <div class="grid-item">Item 6</div>
       </div>
 </body>
 </html>
