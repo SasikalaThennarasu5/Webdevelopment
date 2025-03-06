@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Position Example</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+            box-sizing: border-box;
+            
+        }
+        body{
+            padding-top: 100px;
+            padding-bottom: 50px;
+        }
+        .container {
+            border: 2px solid black;
+            padding: 10px;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(188, 39, 238);
+            margin-bottom: 10px;
+            position: static; 
+        }
+        .container2 {
+            border: 2px solid black;
+            padding: 10px;
+        }
+        .box2 {
+            width: 250px;
+            height: 250px;
+            background-color: rgb(228, 238, 39);
+            margin-bottom: 10px;
+            position: relative; 
+            top: 20px;
+            left: 50px;
+            
+        }
+        .container3 {
+            border: 2px solid black;
+            padding: 10px;
+            position: relative;
+        }
+        .box3 {
+            width: 250px;
+            height: 250px;
+            background-color: rgb(123, 251, 249);
+            margin-bottom: 10px;
+        }
+        
+        .header{
+            position:sticky;
+            top: 0;
+            width: 100%;
+            background-color: blueviolet;
+            padding: 15px 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+p{
+    font-size: 24px;
+}
+
+
+nav ul{
+    list-style: none;
+    position: relative;
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background: white;
+    border: 1px soild blue;
+    padding: 10px;
+    z-index: 10;
+}
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+.sidebar{
+    background-color:black;
+    color: bisque; 
+            padding: 10px; 
+            border-radius: 5px; 
+            width: 250px;
+            height: 100vh;
+            position: sticky;
+        } 
+    </style>
+</head>
+<body>
+
+    131. Create a static element and observe how it behaves in the normal document flow. 
+    <div class="container">
+        <div class="box">Box 1</div>
+        
+    </div>
+    <br><br>
+    132.: Create a relative element and offset it using top and left.  
+    <div class="container2">
+        <div class="box2">Box 1</div>
+        
+    </div>
+    <br><br>
+    133. : Add an absolute element inside a relative parent and position it in the bottom-right corner. 
+    
+    <div class="container3">
+        <div class="box3">Box 1</div>
+        
+    </div>
+    <br><br>
+    
+    <br><br>
+    135. Add a sticky header that sticks to the top of the viewport when scrolling.
+<div class="header">
+    Sticky header-Programming Languages
+</div>
+<div><p>
+    Add a sticky header that sticks to the top of the viewport when scrolling. 
+</p></div>
+<br><br>
+    136. Use z-index to position overlapping elements (e.g., a modal above a background). 
+    <br><br>
+    137. Create a highlighted text that reveals additional info on hover using ::after pseudo-element 
+    <br><br>
+    138. Build a modal window with absolute positioning and center it using transform. 
+    <br><br>
+    
+<br><br>
+    140. Create a dropdown menu using absolute positioning.
+    <br><br>
+    <nav>
+        <ul>
+            <li class="dropdown">
+                Menu
+                <ul class="dropdown-content">
+                    <li>Option 1</li>
+                    <li>Option 2</li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    
+    <br><br>
+    141. Add a sticky sidebar that remains visible while scrolling through content. 
+    <br><br>
+    <div class="sidebar">
+        <h2>links and navigation</h2>
+        <p>menu</p>
+        <p>Options</p>
+        <p>contacts</p>
+        <p>address</p>
+        <p>Phone numbers</p>
+    </div>
+
+    <br><br>
+    142. : Build a full-screen overlay using fixed positioning. 
+
+    <br><br>
+    143. : Combine relative, absolute, and z-index to create layered content. 
+
+    
+
+
+
+
+
+</body>
+</html>
