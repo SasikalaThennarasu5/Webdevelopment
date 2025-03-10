@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            padding: 20px;
+            border-radius: 10px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        
+        @media (orientation: portrait) {
+            .container {
+                background-color: lightblue;
+                width: 80%;
+                height: 60%;
+                transform: rotate(0deg);
+            }
+        }
+
+        
+        @media (orientation: landscape) {
+            .container {
+                background-color: lightcoral;
+                width: 100%;
+                transform: rotate(0deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Programming Languages</h2>
+        <p>HTML CSS JAVA</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f4f4f4;
+            text-align: center;
+        }
+        .btn {
+            background: blue;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+       
+
+        .btn:hover {
+            background: darkblue;
+        }
+
+        @media (max-width: 600px) {
+            .btn {
+                padding: 10px 20px;
+                font-size: 16px;
+                background: rgb(246, 97, 204);
+            }
+        }
+        
+        @media (min-width: 601px) and (max-width: 1024px) {
+            .btn {
+                padding: 12px 30px;
+                font-size: 20px;
+                background: rgb(247, 175, 42);
+            }
+        }
+
+        
+        
+         @media (min-width: 1025px) {
+         .btn {
+            background: blue;
+            padding: 15px 40px;
+            font-size: 24px;
+            
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <button class="btn">Click Me</button>
+    </div>
+
+</body>
+</html>

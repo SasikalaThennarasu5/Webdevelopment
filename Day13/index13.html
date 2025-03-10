@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <style>
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: lightgray;
+    color: darkblue;
+    padding: 20px;
+}
+
+
+@media (min-width: 768px) {
+   
+    @media (orientation: landscape) {
+        body {
+            background-color: rgb(233, 199, 228);
+            color: rgb(204, 91, 35);
+        }
+
+        main {
+            max-width: 80%;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 28px;
+        }
+    }
+}
+
+@media (min-width: 1920px) {
+    
+    body {
+        background-color: #f4f4f4;
+        color: black;
+        font-size: 18px;
+    }
+
+    main {
+        max-width: 60%;
+        margin: auto;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Responsive Web Page</h1>
+    </header>
+
+    <main>
+        <p>This page changes appearance based on the device's resolution and orientation.</p>
+        <img src="./assets/images/img1.jpg" alt="Example Image">
+    </main>
+
+    <footer>
+        <p>© 2025 www.google.com All Rights Reserved</p>
+    </footer>
+</body>
+</html>
