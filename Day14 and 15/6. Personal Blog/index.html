@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Blog</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        body {
+            background: pink;
+            color: #333;
+        }
+        .header {
+            width: 100%;
+            height: 350px;
+            background: url('./assets/images/img1.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .sidebar {
+            width: 250px;
+            position: sticky;
+            top: 20px;
+            height: fit-content;
+            background: white;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .container .sidebar ul li{
+            text-decoration: none;
+
+        }
+        .sidebar h3 {
+            margin-bottom: 10px;
+        }
+        .content {
+            flex: 1;
+            margin-left: 20px;
+        }
+        .post {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .post h2 {
+            margin-bottom: 10px;
+            color: pink;
+        }
+        .comment-section {
+            margin-top: 20px;
+        }
+        .comment-section input, .comment-section textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .comment-section button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .comment-section button:hover {
+            background: #555;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <h3>Categories</h3>
+            <ul>
+                <li><a href="#food">Food</a></li>
+                <li><a href="#travel">Travel</a></li>
+                <li><a href="#photography">Photography</a></li>
+                <li><a href="#lifestyle">Lifestyle</a></li>
+                <li><a href="#Dance">Dance</a></li>
+                <li><a href="#Pencil Art">Pencil Art</a></li>
+
+            </ul>
+        </aside>
+        <main class="content">
+            <section id="food" class="post">
+                <h2>Food Adventures</h2>
+                <p>Exploring new cuisines and flavors around the world.</p>
+            </section>
+            <section id="travel" class="post">
+                <h2>Travel Diaries</h2>
+                <p>Sharing my journeys across beautiful destinations.</p>
+            </section>
+            <section id="photography" class="post">
+                <h2>Photography Wonders</h2>
+                <p>Capturing breathtaking moments through my lens.</p>
+            </section>
+            <section id="photography" class="post">
+                <h2>Lifestyle</h2>
+                <p>Sharing My Lifestyle with family.</p>
+            </section>
+            <section id="Dance" class="post">
+            <h2>Dance</h2>
+                <p>Sharing My Dance skills.</p>
+            </section>
+            <section id="Pencil Art" class="post">
+            <h2>Pencil Art</h2>
+                <p>Sharing My Drawing skills.</p>
+            </section>
+            
+            <section class="gallery">
+                <img src="./assets/images/food.jpg" alt="Food">
+                <img src="./assets/images/Travel.jpg" alt="Travel">
+                <img src="./assets/images/photo.jpg" alt="Photography">
+                <img src="./assets/images/nature.jpg" alt="Nature">
+                <img src="./assets/images/city.jpg" alt="City">
+                <img src="./assets/images/beach.jpg" alt="Beach">
+                <img src="./assets/images/lifdestyle.jpg" alt="Lifestyle">
+                <img src="./assets/images/dance.jpg" alt="Dance">
+                <img src="./assets/images/download.jpg" alt="Drawing">
+            </section>
+            
+            <section class="comment-section">
+                <h3>Leave a Comment</h3>
+                <input type="text" placeholder="Your Name">
+                <textarea placeholder="Your Comment"></textarea>
+                <button>Submit</button>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

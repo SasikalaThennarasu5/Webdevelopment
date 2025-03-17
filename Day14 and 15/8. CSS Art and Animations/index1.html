@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #87CEFA, #fff);
+            overflow-x: hidden;
+        }
+
+.sun{
+    position: absolute ;
+    width: 100px;
+    height: 100px;
+    border: 2px solid red;
+    border-radius: 50%;
+    background-color: yellow;
+    top: 50px;
+    left: 50px;
+    animation: spin 10s linear infinite;
+    
+}
+@keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+     
+.cloud{
+    position: absolute;
+    top:80px;
+    left:50%;
+    height: 60px;
+    width: 120px;
+    border-radius: 50%;
+    opacity: 0.8;
+    box-shadow: 30px 0 0 10px white, -30px 0 0 10px white;
+    animation: movecloud 15s linear infinite;
+    background-color: white;
+}
+@keyframes movecloud{
+    0%{left: 50%;}
+    100%{left: -200px;}
+}   
+.ball{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    background-color: blue;
+    border: 2px solid red;
+    border-radius: 50%;
+    left:70%;
+    bottom: 50px;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce{
+    0%, 100% {transform: translateY(0) ;}
+    50% {transform: translateY(-300px) ;}
+}
+.square{
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    border: 2px solid orangered;
+    background-color: aqua;
+    left:50%;
+    bottom:200px;
+    animation: rotate 2s linear infinite;
+}
+@keyframes rotate{
+    0%{transform:rotate(0deg) ;}
+    100%{transform: rotate(360deg);}
+}
+.tree{
+    width:60px;
+    height: 120px;
+    border-radius: 50%;
+    bottom: 0;
+    left:30%;
+    background-color: #8B4513;
+    position: absolute;
+}
+.tree::before{
+    content:"" ;
+    position: absolute;
+    background-color: green;
+    width: 110px;
+    height: 100px;
+    border-radius: 50%;
+    bottom: 100px;
+left: -25px;
+}
+.parallax{
+    position: relative;
+    z-index: -1;
+    background: url(./assets/images/COVER.jpg)cover;
+    height: 300px;
+    animation: parallax 15s infinite;
+}
+@keyframes parallax{
+    0% { background-position: 0 0; }
+            100% { background-position: -1000px 0; }
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div class="sun"></div>
+    <div class="cloud"></div>
+    <div class="ball"></div>
+    <div class="square"></div>
+    <div class="tree"></div>
+    <div class="parallax"></div>
+</body>
+</html>

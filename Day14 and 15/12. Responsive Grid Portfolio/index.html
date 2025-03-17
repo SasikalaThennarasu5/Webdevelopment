@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Designer Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #6dc6f9;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: center;
+            background: #3d3a8d;
+            color: white;
+            padding: 50px 20px;
+        }
+        .hero img {
+            width: 150px;
+            height: 150px;
+            
+            margin-right: 20px;
+        }
+
+        .grid-container {
+            display: grid;
+            gap: 20px;
+            padding: 40px;
+            grid-template-areas: 
+                "projects achievements"
+                "projects skills"
+                "goals testimonials";
+        }
+
+        .projects { grid-area: projects; }
+        .achievements { grid-area: achievements; }
+        .skills { grid-area: skills; }
+        .goals { grid-area: goals; }
+        .testimonials { grid-area: testimonials; }
+
+        .grid-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .grid-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+   
+        }
+        .hero h1{
+color: pink;
+font-size: 48px;
+        }
+        .hero h2{
+            color: rgb(0, 255, 247);
+        }
+        .hero p{
+            color: rgb(246, 231, 21);
+        }
+h2{
+    color:rgb(14, 199, 153)
+}
+        .social-media {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+        }
+
+        .social-media a {
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-areas: 
+                    "projects"
+                    "achievements"
+                    "skills"
+                    "goals"
+                    "testimonials";
+            }
+            .hero{
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div>
+            <img src="./assets/images/img1.jpg" height="150px" width="150px">
+            <h2>Sasikala Thennarasu</h2>
+        </div>
+        <div>
+            <h1>Welcome to My Portfolio</h1>
+            <p>Creative web designer with a passion for modern and responsive designs.</p>
+        </div>
+        <div>
+            <p>call me:0123456789</p>
+            <p>mail me:xyzonmail@gmail.com</p>
+        </div>
+    </section>
+
+    <section class="grid-container">
+        <div class="grid-item projects">
+            <h2>Projects</h2>
+            <ul>
+                <li>Portfolio Website</li>
+                <li>E-commerce Store</li>
+                <li>Business Landing Page</li>
+                <li>Restaurant menu page design</li>
+                <li>Photography Portfolio</li>
+                <li>Event Registration For Technofest2025</li>
+                <li>Gravitygym Website</li>
+                <li>Udemy Online </li>
+                <li>CSS art and animations </li>
+                <li>Cook With Smile website</li>
+                <li>Paradise holidays website</li>
+            </ul>
+        </div>
+        <div class="grid-item achievements">
+            <h2>Achievements</h2>
+            <ul>
+                <li>Best Web Designer Award 2023</li>
+                <li>Completed 100+ Projects</li>
+                <li>Certified UI/UX Expert</li>
+            </ul>
+        </div>
+        <div class="grid-item skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML, CSS, JavaScript</li>
+                <li>React & Vue.js</li>
+                <li>UI/UX Design</li>
+            </ul>
+        </div>
+        <div class="grid-item goals">
+            <h2>Goals</h2>
+            <ul>
+                <li>Develop innovative web solutions</li>
+                <li>Enhance user experience with creative designs</li>
+                <li>Expand knowledge in modern web technologies</li>
+            </ul>
+        </div>
+        <div class="grid-item testimonials">
+            <h2>Testimonials</h2>
+            <p>"An amazing designer! My website looks fantastic." -John Doe</p>
+            <p>"Highly professional and creative work." - Elena</p>
+        </div>
+    </section>
+
+    <section class="social-media">
+        <h2>Follow Me</h2>
+        <a href="#"><img src="assets/images/facebook.png"height="30px" width="30px"></a>  
+        <a href="#"><img src="assets/images/instagram.png"height="30px" width="30px"></a>
+        <a href="#"><img src="assets/images/whatspp.png"height="30px" width="30px"></a>
+        <a href="#"><img src="assets/images/twitter.png"height="30px" width="30px"></a>
+    </section>
+</body>
+</html>

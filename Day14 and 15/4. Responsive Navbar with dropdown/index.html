@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Store</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f8f8f8;
+        }
+
+       
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            padding: 15px 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+       
+        .logo img {
+            height: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+            position: relative;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px;
+            display: block;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .nav-links a:hover {
+            color: #ff5a5f;
+        }
+
+       
+        .dropdown {
+            position: absolute;
+            top: 40px;
+            left: 0;
+            background: white;
+            min-width: 150px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            display: none;
+            flex-direction: column;
+            z-index: 10;
+        }
+
+        .dropdown a {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .dropdown a:hover {
+            background: #f9f9f9;
+        }
+
+        
+        .nav-links li:hover .dropdown {
+            display: flex;
+        }
+
+        
+        .search-container {
+            display: flex;
+            align-items: center;
+            background: #f1f1f1;
+            padding: 5px 50px;
+            border-radius: 20px;
+        }
+
+        .search-container input {
+            border: none;
+            outline: none;
+            background: transparent;
+            padding: 5px;
+        }
+
+        
+        .right-icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .icon {
+            margin-left: 15px;
+            font-size: 18px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .icon:hover {
+            color: #ff5a5f;
+        }
+
+        
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        #menu-checkbox {
+            display: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: white;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links li {
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            #menu-checkbox:checked + .nav-links {
+                display: flex;
+            }
+
+            .search-container {
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .right-icons {
+                margin-top: 10px;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        .section {
+            padding: 50px 20px;
+            text-align: center;
+            background: white;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .image-grid img {
+            width: 450px;
+            height: 450px;
+            border-radius: 10px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="./assets/images/logo.png" alt="Logo">
+        </div>
+
+        <label for="menu-checkbox" class="menu-toggle">☰</label>
+        <input type="checkbox" id="menu-checkbox">
+
+        <ul class="nav-links">
+            <li>
+                <a href="#">Men</a>
+                <div class="dropdown">
+                    <a href="#">T-Shirts</a>
+                    <a href="#">Jeans</a>
+                    <a href="#">Shoes</a>
+                    <a href="#">Watches</a>
+                </div>
+            </li>
+            <li>
+                <a href="#">Women</a>
+                <div class="dropdown">
+                    <a href="#">Dresses</a>
+                    <a href="#">Handbags</a>
+                    <a href="#">Jewelry</a>
+                    <a href="#">Shoes</a>
+                </div>
+            </li>
+            <li><a href="#">Kids</a>
+            <div class="dropdown">
+                <a href="#">Dresses</a>
+                <a href="#">Books</a>
+                <a href="#">Toys</a>
+                <a href="#">Shoes and slippers</a>
+            </div>
+        </li>
+            <li><a href="#">Home & Living</a></li>
+            <li><a href="#">Beauty</a></li>
+            <li><a href="#">Studio</a></li>
+        </ul>
+
+        <div class="search-container">
+            🔍 <input type="text" placeholder="Search for products, brands and more">
+        </div>
+
+        <div class="right-icons">
+            <a href="#" class="icon">👤 Profile</a>
+            <a href="#" class="icon">❤️ Wishlist</a>
+            <a href="#" class="icon">🛍️ Bag</a>
+        </div>
+    </nav>
+
+    <div id="men" class="section">
+        <h2>Men's Collection</h2>
+        <p>Explore the latest fashion trends for men.</p>
+        <div class="image-grid">
+            <img src="./assets/images/img1.webp" alt="Men's Fashion 1">
+            <img src="./assets/images/img2.webp" alt="Men's Fashion 2">
+            <img src="./assets/images/img3.webp" alt="Men's Fashion 3">
+            <img src="./assets/images/img4.webp" alt="Men's Fashion 4">
+        </div>
+    </div>
+
+    <div id="women" class="section">
+        <h2>Women's Collection</h2>
+        <p>Discover stylish outfits and accessories for women.</p>
+        <div class="image-grid">
+            <img src="./assets/images/IMG5.webp" alt="Women's Fashion 1">
+            <img src="./assets/images/IMG6.webp" alt="Women's Fashion 2">
+            <img src="./assets/images/IMG7.webp" alt="Women's Fashion 3">
+            <img src="./assets/images/IMG8.webp" alt="Women's Fashion 4">
+        </div>
+    </div>
+
+    <div id="kids" class="section">
+        <h2>Kids' Collection</h2>
+        <p>Shop trendy and comfortable clothing for kids.</p>
+        <div class="image-grid">
+            <img src="./assets/images/img9.webp" alt="Kids' Fashion 1">
+            <img src="./assets/images/img10.webp" alt="Kids' Fashion 2">
+            <img src="./assets/images/img11.webp" alt="Kids' Fashion 3">
+            <img src="./assets/images/img12.webp" alt="Kids' Fashion 4">
+        </div>
+    </div>
+
+    <div id="suggestions" class="section">
+        <h2>Suggestions</h2>
+        <p>Let us know what you'd love to see in our store!</p>
+        <div class="image-grid">
+            <img src="./assets/images/img13.webp" alt="Suggestions 1">
+            <img src="./assets/images/img14.webp" alt="Suggestions 2">
+            <img src="./assets/images/img15.webp" alt="Suggestions 3">
+            <img src="./assets/images/img16.webp" alt="Suggestions 4">
+        </div>
+    </div>
+
+    <footer class="footer">
+        &copy; 2025 Myntra Fashion Store. All rights reserved.
+    </footer>
+</body>
+</html>
