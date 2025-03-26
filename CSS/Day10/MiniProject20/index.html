@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+.dashboard {
+  display: grid;
+  grid-template-columns: 250px 1200PX; 
+  grid-template-rows: 50px 1fr 50px; 
+  height: 100vh;
+  gap: 10px;
+}
+
+
+.header {
+    width: 1500px;
+  grid-column: 1 / -1;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+.sidebar {
+  background-color: #222;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+}
+
+.sidebar button {
+  background: #444;
+  color: white;
+  padding: 10px;
+  border: none;
+  text-align: left;
+ 
+  border-radius: 5px;
+}
+
+.sidebar button:hover {
+  background: #555;
+}
+
+
+.main-content {
+  background-color: #fff;
+  padding: 20px;
+}
+
+
+.cards {
+  display: flex;
+  gap: 10px;
+}
+
+.card {
+  flex: 1;
+  background: #ddd;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.footer {
+    width: 100vw;
+    
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="header">Dashboard</div>
+        
+        <div class="sidebar">
+          <button>Home</button>
+          <button>Reports</button>
+          <button>Settings</button>
+        </div>
+        
+        <div class="main-content">
+          <h2>Main Content</h2>
+          <div class="cards">
+            <div class="card">Card 1</div>
+            <div class="card">Card 2</div>
+            <div class="card">Card 3</div>
+          </div>
+        </div>
+        
+        <div class="footer">© 2025 Dashboard Inc.</div>
+      </div>
+</body>
+</html>

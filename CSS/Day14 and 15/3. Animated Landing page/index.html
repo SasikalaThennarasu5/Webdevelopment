@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Landing Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow-x: hidden;
+            background: #f4f4f4;
+        }
+
+        header {
+            background: #0056b3;
+            color: white;
+            padding: 15px;
+            font-size: 1.5em;
+            animation: slideDown 1s ease-in-out;
+        }
+
+        .hero {
+            background: #007bff;
+            color: white;
+            padding: 50px 20px;
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            animation: slideIn 1.5s ease-in-out;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            animation: slideIn 2s ease-in-out;
+        }
+
+        .cta-button {
+            background: #ff5733;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeIn 2s ease-in-out;
+            border-radius: 5px;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 87, 51, 0.8);
+            background: #e04e2a;
+        }
+
+        .features {
+            display: grid;
+            gap: 20px;
+            padding: 40px 20px;
+        }
+
+        .feature {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s forwards;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .feature:hover {
+            transform: scaleY(3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background: #333333;
+            color: white;
+            padding: 15px;
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @media (min-width: 768px) {
+            .features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .features {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Infotech Solutions
+    </header>
+
+    <section class="hero">
+        <h1>Welcome to Infotech Solutions</h1>
+        <p>Your success starts here. Join us today!</p>
+        <button class="cta-button">Get Started</button>
+    </section>
+
+    <section class="features">
+        <div class="feature">
+            <h2>Data Science</h2>
+            <p>Data science is a multidisciplinary field that uses scientific methods to extract insights from data.</p>
+            <p><b>Fees: 35,000</b></p>
+        </div>
+        <div class="feature">
+            <h2>Machine Learning</h2>
+            <p>Machine learning (ML) is a type of artificial intelligence (AI) that allows machines to learn from data and experience.</p>
+            <p><b>Course fees: 45,000</b></p>
+        </div>
+        <div class="feature">
+            <h2>Artificial Intelligence</h2>
+            <p>Artificial intelligence (AI) is a technology that allows machines to learn, reason, and act like humans.</p>
+            <p><b>Course fees: 25,000</b></p>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 Infotech Solutions. All rights reserved.
+    </footer>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Landing Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: orange
+        }
+        .header {
+            padding: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            margin: 20px auto;
+            width: 80%;
+            transition: transform 0.3s ease-in-out;
+        }
+        .header:hover {
+            transform: scale(1.05);
+        }
+        .btn {
+            padding: 15px 30px;
+            font-size: 18px;
+            background: #ff4b5c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        .btn:hover {
+            transform: scale(1.1);
+            background: #e8434e;
+        }
+        .content {
+            margin: 50px auto;
+            width: 80%;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            margin: auto;
+            transition: transform 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .card-buttons {
+            margin-top: 15px;
+        }
+        .card-buttons .btn {
+            margin: 5px;
+            width: 45%;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="./assets/images/img1.jpg" alt="flikartlogo">
+        <h1>Welcome to Flipkart</h1>
+        <button class="btn">Get Started</button>
+    </header>
+    <section class="content">
+        <div class="card">
+            <img src="./assets/images/img3.webp" alt="car Image">
+            <h2>Stylish Truck</h2>
+            <p>Elegant design with premium quality materials.</p>
+            <div class="card-buttons">
+                <button class="btn">Add to Cart</button>
+                <button class="btn">Buy Now</button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

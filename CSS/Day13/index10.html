@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <style>
+       
+.hover-button, .hover-image {
+    transition: transform 0.3s ease-in-out;
+}
+
+
+@media (min-width: 1024px) {
+    .hover-button:hover {
+        background-color: #ff5733;
+        color: white;
+        
+    }
+
+    .hover-image:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <button class="hover-button">Hover Me</button>
+
+    <img src="./assets/images/img1.jpg" alt="Sample Image" class="hover-image">
+
+</body>
+</html>
