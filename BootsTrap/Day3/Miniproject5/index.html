@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <title>Scrollspy Single Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    section {
+      height: 100vh;
+      padding-top: 70px; 
+    }
+  </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbarScrollspy" data-bs-offset="70" tabindex="0">
+
+<!-- Sticky Navbar -->
+<nav id="navbarScrollspy" class="navbar navbar-expand-lg bg-dark text-light sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand text-light" href="#">MySite</a>
+    <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#services">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Full-Height Sections -->
+<section id="home" class="bg-dark text-light d-flex align-items-center justify-content-center">
+  <div class="text-center">
+    <h1>Home</h1>
+    <p>Welcome to the homepage.</p>
+  </div>
+</section>
+
+<section id="services" class="bg-secondary text-light d-flex align-items-center justify-content-center">
+  <div class="text-center">
+    <h1>Services</h1>
+    <p>Here are the services we offer.</p>
+  </div>
+</section>
+
+<section id="contact" class="bg-dark text-light d-flex align-items-center justify-content-center">
+  <div class="text-center">
+    <h1>Contact</h1>
+    <p>Get in touch with us!</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-light text-center py-3 position-relative">
+  &copy; 2025 MySite. All rights reserved.
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  
+
+</body>
+</html>
