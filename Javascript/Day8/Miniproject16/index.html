@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Miniproject14</h2>
+    <h2>Palindrome checker</h2>
+    <script>
+        function checkPalindrome(input) {
+
+    // Remove spaces, special characters, and convert to lowercase
+    let cleanedInput = input.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
+
+    // Reverse the cleaned input and compare it with the original cleaned input
+    let reversedInput = cleanedInput.split("").reverse().join("");
+
+    // Check if the cleaned input is the same as its reverse
+    if (cleanedInput === reversedInput) {
+        console.log("Palindrome");
+    } else {
+        console.log("Not a Palindrome");
+    }
+}
+
+// Example usage:
+let input = " Was it a car or a cat I saw?";
+checkPalindrome(input);
+
+    </script>
+</body>
+</html>
