@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Management System</title>
+  
+</head>
+<body>
+
+  <h1>Employee Management System</h1>
+  
+
+  <script>
+
+   // Employee constructor
+function Employee(name, position, salary) {
+
+  this.name = name;
+  this.position = position;
+  this.salary = salary;
+
+  // Method to increase salary dynamically
+  
+  this.increaseSalary = function (amount) {
+
+    this.salary += amount;
+
+    console.log(`${this.name}'s salary increased by ${amount}. New salary: ${this.salary}`);
+  };
+}
+
+// Array to store employees
+const employees = [];
+
+
+// Add new employee
+
+function addEmployee(name, position, salary) {
+
+  const emp = new Employee(name, position, salary);
+  employees.push(emp);
+
+  console.log(`Added: ${name} - ${position} - $${salary}`);
+}
+
+
+// Display employee table
+function displayEmployees() {
+
+  console.log("\n Employee List:");
+
+  if (employees.length === 0) {
+    console.log("No employees to display.");
+
+  }
+   else 
+  {
+
+    // Use map to clean up the output
+
+    const tableData = employees.map(emp => ({
+      
+      Name: emp.name,
+      Position: emp.position,
+      Salary: `$${emp.salary}`
+    }));
+
+    console.table(tableData);
+  }
+}
+
+// ------------ Example Usage -------------
+
+
+addEmployee("Sasi", "Developer", 100000);
+addEmployee("Saranya", "Designer", 80000);
+addEmployee("Akshaya", "Manager", 90000);
+
+displayEmployees();
+
+employees[0].increaseSalary(5000); 
+employees[2].increaseSalary(2000); 
+
+displayEmployees(); 
+
+  </script> 
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Day7tasks</h2>
+    <script>
+        console.log("JS79. Create a Person constructor with properties name and age, and create multiple instances.")
+
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+// Creating instances
+let person1 = new Person("Sasi", 25);
+let person2 = new Person("Akshara", 6);
+  
+  // Displaying the instances
+  console.log(person1); 
+  console.log(person2); 
+  
+  
+console.log("")
+
+
+console.log("JS80. Add a method to the Person constructor that returns a greeting message.")
+
+  // Adding a method using the prototype
+
+  Person.prototype.greet = function() {
+    return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
+  };
+  
+  console.log(person1.greet()); 
+  console.log(person2.greet());
+  
+console.log("")
+
+console.log("JS81. Create a Car constructor with brand, model, and year, and display the details.")
+
+// Constructor function for Car
+function Car(brand, model, year) {
+    this.brand = brand;
+    this.model = model;
+    this.year = year;
+  }
+  
+  // Creating instances
+  let myCar = new Car("Maruthi", "Ertiga", 2016);
+  
+  console.log(myCar.brand, myCar.model, myCar.year);
+
+console.log("")
+
+console.log("JS82. Modify the Car constructor to include a method that calculates the car's age.")
+
+Car.prototype.getAge = function () {
+
+  let currentYear = new Date().getFullYear();
+
+  return currentYear - this.year;
+
+};
+
+console.log(`Car age: ${myCar.getAge()} years`); 
+
+console.log("")
+
+console.log("JS83. Use this inside a constructor function to refer to an object and modify properties dynamically.")
+
+function Book(title, author) {
+
+  this.title = title;
+  this.author = author;
+
+  this.updateTitle = function (newTitle) {
+      this.title = newTitle;
+  };
+}
+
+let myBook = new Book("Old Title", "True Love");
+
+myBook.updateTitle("Friendship");
+
+console.log(myBook.title); // Output: New Title
+  
+
+console.log("")
+
+console.log("JS84. Create a BankAccount constructor with accountNumber, balance, and methods to deposit and withdraw money.")
+
+// Constructor function for BankAccount
+function BankAccount(accountNumber, balance) {
+
+  this.accountNumber = accountNumber;
+  this.balance = balance;
+
+  this.deposit = function (amount) {
+      this.balance += amount;
+  };
+
+  this.withdraw = function (amount) {
+
+      if (amount <= this.balance) this.balance -= amount;
+      else console.log("Insufficient funds");
+  };
+}
+
+let account = new BankAccount("123456", 1000);
+account.deposit(500);
+account.withdraw(300);
+console.log(account.balance);
+
+console.log("")
+
+console.log("JS85. Implement default values in a constructor function when no parameters are provided.")
+
+function User(name = "Kavi", age = 18) {
+  this.name = name;
+  this.age = age;
+}
+
+let defaultUser = new User();
+
+console.log(defaultUser.name, defaultUser.age); // Output: Guest 18
+
+console.log("")
+
+console.log("JS86. Create a Student constructor with an array property grades and a method to calculate the average grade.")
+
+function Student(name, grades) {
+  this.name = name;
+  this.grades = grades;
+
+  this.getAverage = function () {
+      let total = this.grades.reduce((sum, grade) => sum + grade, 0);
+      return (total / this.grades.length).toFixed(2);
+  };
+}
+
+let student = new Student("Magizh", [85, 90, 78, 92]);
+console.log(`${student.name}'s average grade: ${student.getAverage()}`); 
+
+console.log("")
+
+console.log("JS87. Use prototype to add a new method to a constructor function dynamically.")
+function Animal(type) {
+  this.type = type;
+}
+
+// Add method dynamically using prototype
+Animal.prototype.speak = function () {
+  return `The ${this.type} makes a sound.`;
+};
+
+let dog = new Animal("dog");
+console.log(dog.speak()); 
+  
+
+console.log("")
+
+console.log("JS88. Create a Book constructor function with title, author, and price, and filter books based on price.")
+// Book constructor function
+
+function Books(title, author, price) {
+  this.title = title;
+  this.author = author;
+  this.price = price;
+}
+
+let books = [
+  new Books("Traveller", "Author 1", 15),
+  new Books("Dream night", "Author 2", 25),
+  new Books("Bahu", "Author 3", 10)
+];
+
+// Filter books under $20
+let affordableBooks = books.filter(book => book.price < 20);
+
+console.log("Books under $20:");
+
+affordableBooks.forEach(book => console.log(book.title)); 
+
+
+console.log("")
+
+console.log("JS89. Implement inheritance in constructor functions where a Manager extends an Employee constructor.")
+
+function Employee(name, position) {
+  this.name = name;
+  this.position = position;
+}
+
+function Manager(name, department) {
+  // Inherit Employee properties
+  Employee.call(this, name, "Manager");
+  this.department = department;
+}
+
+// Inherit Employee prototype methods (if any)
+Manager.prototype = Object.create(Employee.prototype);
+
+Manager.prototype.constructor = Manager;
+
+let manager1 = new Manager("Sarah", "Sales");
+console.log(manager1.name); // Output: Sarah
+console.log(manager1.position); // Output: Manager
+console.log(manager1.department); // Output: Sales
+  
+console.log("")
+
+console.log("JS90. Create a ShoppingCart constructor with an array of products and methods to add, remove, and calculate total price.")
+
+function ShoppingCart() {
+  this.products = [];
+
+  this.addProduct = function (product) {
+      this.products.push(product);
+  };
+
+  this.removeProduct = function (productName) {
+      this.products = this.products.filter(p => p.name !== productName);
+  };
+
+  this.calculateTotal = function () {
+      return this.products.reduce((total, p) => total + p.price, 0);
+  };
+}
+
+// Sample product
+let cart = new ShoppingCart();
+cart.addProduct({ name: "Laptop", price: 1000 });
+cart.addProduct({ name: "Mouse", price: 50 });
+cart.removeProduct("Mouse");
+
+console.log("Total:", cart.calculateTotal()); // Output: Total: 1000
+
+console.log("")
+
+console.log("JS91. Use new keyword inside a function to create an instance of another constructor function.")
+
+function Engine(type) {
+  this.type = type;
+}
+
+function CarWithEngine(brand, engineType) {
+  this.brand = brand;
+  this.engine = new Engine(engineType); // Using `new` inside constructor
+}
+
+let car = new CarWithEngine("Toyota", "V6");
+console.log(car.brand);      // Output: Toyota
+console.log(car.engine.type); // Output: V6
+
+    </script>
+</body>
+</html>

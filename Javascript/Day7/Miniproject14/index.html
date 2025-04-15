@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Miniproject14</h2>
+    <h2>Library Management System </h2>
+    
+    <script>
+
+       // Book constructor
+function Book(title, author, year) {
+
+  this.title = title;
+  this.author = author;
+  this.year = year;
+}
+
+// Array to store books
+const books = [];
+
+// Add a book
+function addBook(title, author, year) {
+
+  const book = new Book(title, author, year);
+  books.push(book);
+
+  console.log(` Book added: ${title} by ${author} (${year})`);
+}
+
+// ✔ Display all books
+function displayBooks(bookArray = books) {
+
+  console.log("\n Book List:");
+  
+  if (bookArray.length === 0) {
+    console.log("No books to display.");
+    return;
+  }
+
+  bookArray.forEach((book, index) => {
+
+    console.log(`${index + 1}. ${book.title} by ${book.author} (${book.year})`);
+  });
+}
+
+// Search books by title
+function searchBooks(query) {
+
+  const results = books.filter(book =>
+    book.title.toLowerCase().includes(query.toLowerCase())
+  );
+
+  console.log(`\n Search results for "${query}":`);
+
+  displayBooks(results);
+}
+
+// --------- Example Usage ----------
+
+addBook("Maha Kavithai", "Vairamuthu", 1937);
+addBook("Ambedkar: A Life", "Shashi Tharoor", 1949);
+addBook("Building Partnerships", "Captain Himadri Das", 1960);
+
+displayBooks(); // Show all books
+
+searchBooks(" A "); // Filter by title
+
+
+    </script>
+</body>
+</html>
