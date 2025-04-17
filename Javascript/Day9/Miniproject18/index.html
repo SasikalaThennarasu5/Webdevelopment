@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stopwatch Timer</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+
+    #display {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .start { background-color: #28a745; color: white; }
+    .stop { background-color: #dc3545; color: white; }
+    .reset { background-color: #ffc107; color: black; }
+  </style>
+</head>
+<body>
+
+  <h1>Stopwatch Timer</h1>
+  <div id="display">0</div>
+
+  <button class="start" onclick="startTimer()">Start</button>
+  <button class="stop" onclick="stopTimer()">Stop</button>
+  <button class="reset" onclick="resetTimer()">Reset</button>
+
+  <script>
+    let count = 0;
+    let timer = null;
+
+    function updateDisplay() {
+      document.getElementById('display').textContent = count;
+    }
+
+    function startTimer() {
+      if (!timer) {
+        timer = setInterval(() => {
+          count++;
+          updateDisplay();
+        }, 1000);
+      }
+    }
+
+    function stopTimer() {
+      clearInterval(timer);
+      timer = null;
+    }
+
+    function resetTimer() {
+      stopTimer();
+      count = 0;
+      updateDisplay();
+    }
+  </script>
+
+</body>
+</html>

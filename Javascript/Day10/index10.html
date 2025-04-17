@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>JS128. Toggle an element's visibility when another element is clicked</h4>
+
+    <button onclick="toggleVisibility()">Toggle Box</button>
+    <div id="box" style="width:100px; height:100px; background:blue; margin-top:10px;"></div>
+    
+    <script>
+      function toggleVisibility() {
+        const box = document.getElementById("box");
+        box.style.display = (box.style.display === "none") ? "block" : "none";
+      }
+    </script>
+    
+</body>
+</html>

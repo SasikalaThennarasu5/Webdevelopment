@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>JS109. Create a new list item dynamically</h4>
+
+    <ul id="myList">
+        <li>Item 1</li>
+      </ul>
+      
+      <button onclick="addItem()">Add Item</button>
+      
+      <script>
+      function addItem() {
+        const li = document.createElement("li");
+
+        li.textContent = "New Item";
+
+        document.getElementById("myList").appendChild(li);
+      }
+
+      </script>
+      
+</body>
+</html>

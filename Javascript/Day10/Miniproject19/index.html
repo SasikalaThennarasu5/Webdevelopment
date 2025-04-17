@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Click Counter App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+    #count {
+      font-size: 2rem;
+      margin: 20px 0;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      margin: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Click Counter App</h1>
+  <div id="count">Count: 0</div>
+  <button onclick="incrementCount()">Click Me</button>
+  <button onclick="resetCount()">Reset</button>
+
+  <script>
+    let count = 0;
+
+    function incrementCount() {
+      count++;
+      document.getElementById("count").innerText = `Count: ${count}`;
+    }
+
+    function resetCount() {
+      count = 0;
+      document.getElementById("count").innerText = `Count: ${count}`;
+    }
+  </script>
+
+</body>
+</html>

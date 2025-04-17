@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>JS112. Change the text color of all paragraphs using querySelectorAll().</h4>
+
+    <p>Paragraph 1</p>
+
+<p>Paragraph 2</p>
+
+<button onclick="changeTextColors()">Change Text Color</button>
+
+<script>
+    
+function changeTextColors() {
+  document.querySelectorAll('p').forEach(p => p.style.color = 'pink');
+}
+
+</script>
+
+</body>
+</html>

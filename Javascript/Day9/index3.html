@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>JS108. Hide and show an element using a toggle button.</h4>
+
+   <p id="toggleText">Toggle me!</p>
+
+<button onclick="toggleVisibility()">Toggle</button>
+
+<script>
+function toggleVisibility() {
+  const el = document.getElementById('toggleText');
+  
+  el.style.display = (el.style.display === 'none') ? 'block' : 'none';
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Preview</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    #preview {
+      margin-top: 20px;
+      max-width: 300px;
+      max-height: 300px;
+      border: 2px dashed #aaa;
+      padding: 10px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Image Preview Before Uploading</h1>
+
+  <input type="file" accept="image/*" onchange="previewImage(event)">
+  
+  <div id="preview">
+    <p>No image selected</p>
+  </div>
+
+  <script>
+
+    function previewImage(event) {
+      const file = event.target.files[0];
+      const preview = document.getElementById("preview");
+      preview.innerHTML = ""; 
+
+      if (file && file.type.startsWith("image/")) {
+        const img = document.createElement("img");
+        img.src = URL.createObjectURL(file);
+        preview.appendChild(img);
+        
+      } else {
+        preview.innerHTML = "<p>Please select a valid image file.</p>";
+      }
+    }
+  </script>
+
+</body>
+</html>

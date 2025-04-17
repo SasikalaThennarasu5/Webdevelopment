@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>JS116. Add a new heading to the page dynamically</h4>
+
+  <button onclick="addHeading()">Add Heading</button>
+
+<script>
+
+function addHeading() {
+    
+  const h = document.createElement("h2");
+  h.textContent = "New Dynamic Heading";
+  document.body.appendChild(h);
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Light/Dark Mode Toggle</title>
+    <style>
+      body {
+        background-color: white;
+        color: black;
+        transition: all 0.3s ease;
+        font-family: sans-serif;
+        text-align: center;
+        padding: 50px;
+      }
+  
+      .dark-mode {
+        background-color: #121212;
+        color: white;
+      }
+  
+      button {
+        padding: 10px 20px;
+        margin-top: 20px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+  
+    <h1>Light/Dark Mode Toggle</h1>
+    <p>This page is currently in light mode.</p>
+
+    <button onclick="toggleMode()">Toggle Dark Mode</button>
+  
+    <script>
+      function toggleMode() {
+        document.body.classList.toggle('dark-mode');
+  
+        const isDark = document.body.classList.contains('dark-mode');
+        
+        document.querySelector('p').innerText = 
+          `This page is currently in ${isDark ? 'dark' : 'light'} mode.`;
+      }
+    </script>
+  
+  </body>
+  </html>
+  
+  
+</body>
+</html>
