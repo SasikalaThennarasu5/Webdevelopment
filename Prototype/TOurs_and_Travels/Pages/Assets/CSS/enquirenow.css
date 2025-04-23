@@ -1,0 +1,55 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+body {
+  font-family: 'rSegoe UI', sans-serif;
+  background: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+.form-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 90%;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #3b82f6;
+  border-radius: 1rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.input-field::placeholder {
+  color: #888;
+  font-family: 'Font Awesome 6 Free', sans-serif;
+  font-weight: 400;
+}
+
+.input-field:focus {
+  border-color: #2563eb;
+}
+
+.input-field.readonly {
+  background-color: #f3f3f3;
+  cursor: not-allowed;
+  border-color: #ccc;
+}

@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Raleway", sans-serif;
+      font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+  }
+  
+  body {
+    background-color: #fef6e4;
+    color: #333;
+    line-height: 1.6;
+  }
+  .hero-banner {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .hero-banner img {
+    flex: 1;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .hero-section {
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+  }
+  
+  .images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .images img {
+    width: 30%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  h1 {
+    margin: 20px 0;
+    font-size: 2rem;
+  }
+  
+  .features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+  }
+  
+  .features div {
+    text-align: center;
+    font-size: 1rem;
+  }
+  
+  .features span {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .description {
+    padding: 30px 15px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .itinerary {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 0 15px;
+  }
+  
+  .day-box {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
+  }
+  
+  .btn-container {
+    text-align: center;
+    margin: 30px 0;
+  }
+  
+  .enquire-btn {
+    padding: 12px 25px;
+    font-size: 1rem;
+    background-color: #ffcd3c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .enquire-btn:hover {
+    background-color: #fcbf1e;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .images img {
+      width: 45%;
+    }
+  
+    .features {
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .images img {
+      width: 90%;
+    }
+  }
+  
