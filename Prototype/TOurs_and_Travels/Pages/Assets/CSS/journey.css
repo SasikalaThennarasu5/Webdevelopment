@@ -7,20 +7,14 @@
   body {
     font-family: "Raleway", sans-serif;
       font-optical-sizing: auto;
-    font-weight: weight;
+    font-weight: 600;
     font-style: normal;
     background-color: #f8f0dc;
     color: #222;
     line-height: 1.6;
   }
   
-  .hero {
-    background: url();
-    display: flex;
-    flex-direction: column-reverse;
-    padding: 2rem;
-    gap: 2rem;
-  }
+  
   .hero-slider {
     width: 100%;
     height: 400px; /* Adjust as needed */
@@ -75,137 +69,10 @@
     padding: 20px;
   }
 
-  .container {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    gap: 40px;
-    align-items: center;
-    justify-content: center;
-
-  }
   
-  .images {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    position: relative;
-    flex: 1;
-    min-width: 300px;
-  }
-  
-  .img {
-    width: 100%;
-    height: auto;
-    border-radius: 20px;
-    object-fit: cover;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  }
-  
-  .img3 {
-    grid-column: span 2;
-  }
-  
-  .content {
-    flex: 1;
-    min-width: 280px;
-    max-width: 500px;
-  }
-  
-  
-  .img {
-    position: absolute;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    object-fit: cover;
-  }
-  
-  /* Scaled-down positions and sizes */
-  .img1 {
-    top:50;
-    left: -100px;
-    width: 160px;
-    height: 120px;
-    z-index: 3;
-  }
-  
-  .img2 {
-    top: 200px;
-    left: 100;
-    width: 180px;
-    height: 130px;
-  }
-  
-  .img3 {
-    top: 150px;
-    right: 0;
-    width: 160px;
-    height: 110px;
-  }
-  
-  .img4 {
-    top: 0px;
-    left: 40px;
-    width: 220px;
-    height: 200px;
-    z-index: 2;
-  }
-  
-  .img5 {
-    bottom: 0;
-    left: 80px;
-    width: 160px;
-    height: 110px;
-  }
-  
-  .content h1 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-  }
-  
-  .content p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 30px;
-  }
-  
-  .btn {
-    display: inline-block;
-    background-color: #ffd500;
-    color: #000;
-    padding: 14px 24px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 8px;
-    transition: background 0.3s ease;
-  }
-  
-  .btn:hover {
-    background-color: #ffca00;
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    .container {
-      flex-direction: column;
-    }
-  
-    .images {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  
-    .img3 {
-      grid-column: span 2;
-    }
-  }
-    
-  
-  .text-content {
-    flex: 1;
-  }
-  
+ 
   .text-content h1 {
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 5vw, 3rem);
     font-weight: 800;
   }
   
@@ -264,21 +131,29 @@
     }
   
     .image-grid {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       max-width: 400px;
     }
   }
   .category-section {
-    padding: 2rem;
+    padding: 2rem;  
   }
   
   .category-grid {
     display: grid;
-    gap: 2rem;
+    gap: 8rem;
     grid-template-columns: repeat(2, 1fr);
   }
   
+
+  @media (max-width: 320px) {
+    .category-grid {
+      display: block;
+    }
+  }
+
   .card {
+   
     border-radius: 20px;
     overflow: hidden;
     background-color: #fff;
@@ -287,12 +162,12 @@
   }
   
   .card:hover {
-    transform: scalex(50px);
+    transform: scalex(1.05);
   }
   
   .card img {
     width: 100%;
-    height: 450px;
+    height: 300px;
     object-fit: cover;
   }
   
@@ -415,4 +290,64 @@
     .vacation-content {
       padding: 0 1rem;
     }
+  }
+ 
+
+  
+  .hero-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    gap: 2rem;
+  }
+  
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    flex: 1 1 400px;
+    max-width: 500px;
+  }
+  
+  .image-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 25px;
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .hero-text {
+    flex: 1 1 300px;
+    max-width: 600px;
+  }
+  
+  .hero-text h1 {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  
+  .hero-text p {
+    font-size: 1.7rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  .cta-btn {
+    background-color: #ffd900;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    text-decoration: none;
+    font-weight: bold;
+    color: #000;
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+  }
+  
+  .cta-btn:hover {
+    transform: scale(1.05);
   }
