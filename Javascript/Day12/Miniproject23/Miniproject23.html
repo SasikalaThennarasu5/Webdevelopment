@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stopwatch with SessionStorage</title>
+  
+</head>
+<body>
+  <H1>. Library Book Management System Requirements</H1>
+<script>
+
+   // 1. Store Product Details
+   let inventory = [
+  { id: 101, name: "Laptop", category: "Electronics", quantity: 10, price: 1000 },
+  { id: 102, name: "Mouse", category: "Electronics", quantity: 50, price: 20 },
+  { id: 103, name: "Chair", category: "Furniture", quantity: 15, price: 75 }
+];
+
+
+// 2. Check Stock Availability
+
+function checkStock(search) {
+  const result = inventory.find(item =>
+    item.id === search || item.name.toLowerCase() === search.toLowerCase()
+  );
+
+  if (result) {
+    console.log(`${result.name} is in stock: ${result.quantity} units.`);
+  } else {
+    console.log("Product not found.");
+  }
+}
+
+checkStock(101);           // Search by ID
+checkStock("Mouse");       // Search by name
+
+
+//3. Update Inventory
+
+function updateStock(productId, amount) {
+  const product = inventory.find(item => item.id === productId);
+  if (!product) {
+    console.log("Product not found.");
+    return;
+  }
+
+  product.quantity += amount;
+
+  const action = amount >= 0 ? "Added" : "Removed";
+  console.log(`${action} ${Math.abs(amount)} units. New quantity: ${product.quantity}`);
+}
+
+// Add 20 Laptops (new shipment)
+updateStock(101, 20);
+
+// Sell 5 Chairs
+updateStock(103, -5);
+
+//Calculate Total Inventory Value
+function calculateInventoryValue() {
+  const totalValue = inventory.reduce((sum, item) => {
+    return sum + (item.price * item.quantity);
+  }, 0);
+
+  console.log("Total Inventory Value: $", totalValue);
+}
+
+calculateInventoryValue();
+
+
+
+  </script>
+
+</body>
+</html>

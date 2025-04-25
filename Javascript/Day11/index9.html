@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>JS140. Convert a JavaScript object to a JSON string using JSON.stringify() and store it</h4>
+
+    <script>
+        const user = {
+          name: 'Alice',
+          age: 30,
+          email: 'alice@example.com'
+        };
+      
+        const userString = JSON.stringify(user);
+        localStorage.setItem('userObj', userString);
+      </script>
+      
+
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<h4>JS132. Store and retrieve a username using LocalStorage.</h4>
+</html><input type="text" id="username" placeholder="Enter your username">
+<button onclick="saveUsername()">Save</button>
+<button onclick="loadUsername()">Load</button>
+<p id="displayUsername"></p>
+
+<script>
+  function saveUsername() {
+    const username = document.getElementById('username').value;
+    localStorage.setItem('username', username);
+  }
+
+  function loadUsername() {
+    const username = localStorage.getItem('username');
+    document.getElementById('displayUsername').innerText = username ? `Welcome, ${username}` : 'No username saved.';
+  }
+</script>

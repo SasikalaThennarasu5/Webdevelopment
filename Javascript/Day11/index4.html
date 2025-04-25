@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h4>JS135. Store and retrieve session-based login status using SessionStorage.</h4>
+  <button onclick="login()">Login</button>
+  <button onclick="logout()">Logout</button>
+  <p id="status"></p>
+  
+  <script>
+    function login() {
+      sessionStorage.setItem('isLoggedIn', 'true');
+      updateStatus();
+    }
+  
+    function logout() {
+      sessionStorage.removeItem('isLoggedIn');
+      updateStatus();
+    }
+  
+    function updateStatus() {
+      const isLoggedIn = sessionStorage.getItem('isLoggedIn') === 'true';
+      document.getElementById('status').innerText = isLoggedIn ? 'Logged In' : 'Logged Out';
+    }
+  
+    // Update on page load
+    window.onload = updateStatus;
+  </script>
+  
+      
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>JS152. Count how many objects meet a specific condition.</h4>
+
+<script>
+
+ const employees = [
+  { name: "Sasi", age: 25, position: "Developer" },
+  { name: "Hari", age: 26, position: "Designer" },
+  { name: "Keerthi", age: 27, position: "Manager" }
+];
+
+// Method 1: Using .filter()
+const count = employees.filter(emp => emp.age > 25).length;
+
+console.log(`Employees older than 25: ${count}`);
+
+
+</script>
+</body>
+</html>

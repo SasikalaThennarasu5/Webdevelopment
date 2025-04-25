@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>JS141. Convert a JSON string back to a JavaScript object using JSON.parse() and use it</h4>
+
+    <p id="userInfo"></p>
+
+<script>
+  const userStr = localStorage.getItem('userObj');
+  if (userStr) {
+    const user = JSON.parse(userStr);
+    document.getElementById('userInfo').innerText = `User: ${user.name}, Email: ${user.email}`;
+  }
+</script>
+
+</body>
+</html>

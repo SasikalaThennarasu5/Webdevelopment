@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stopwatch with SessionStorage</title>
+  
+</head>
+<body>
+  <H1>. Library Book Management System Requirements</H1>
+<script>
+
+   //1. Store Book Records
+   let library = [
+  {
+    id: 1,
+    title: "1984",
+    author: "George Orwell",
+    genre: "Dystopian",
+    available: true,
+    borrower: null
+  },
+  {
+    id: 2,
+    title: "The Hobbit",
+    author: "J.R.R. Tolkien",
+    genre: "Fantasy",
+    available: false,
+    borrower: "Alice"
+  },
+  {
+    id: 3,
+    title: "Sapiens",
+    author: "Yuval Noah Harari",
+    genre: "History",
+    available: true,
+    borrower: null
+  }
+];
+
+//2. Search Books
+function searchBooks(keyword) {
+  const results = library.filter(book =>
+    book.title.toLowerCase().includes(keyword.toLowerCase()) ||
+    book.author.toLowerCase().includes(keyword.toLowerCase()) ||
+    book.genre.toLowerCase().includes(keyword.toLowerCase())
+  );
+
+  console.log("Search Results:", results);
+}
+
+searchBooks("Tolkien"); // Search by author
+searchBooks("Fantasy"); // Search by genre
+searchBooks("Sapiens"); // Search by title
+
+//3. Track Borrowed Books
+function borrowBook(bookId, borrowerName) {
+  const book = library.find(b => b.id === bookId);
+  if (book && book.available) {
+    book.available = false;
+    book.borrower = borrowerName;
+    console.log(`${book.title} has been borrowed by ${borrowerName}.`);
+  } else {
+    console.log("Book not available or not found.");
+  }
+}
+
+function returnBook(bookId) {
+  const book = library.find(b => b.id === bookId);
+  if (book && !book.available) {
+    book.available = true;
+    console.log(`${book.title} returned by ${book.borrower}.`);
+    book.borrower = null;
+  } else {
+    console.log("Book is already available or not found.");
+  }
+}
+
+borrowBook(3, "John Doe");
+returnBook(2);
+
+//4. List Available Books
+function listAvailableBooks() {
+  const availableBooks = library.filter(book => book.available);
+  console.log("Available Books:", availableBooks);
+}
+
+listAvailableBooks();
+
+
+  </script>
+
+</body>
+</html>

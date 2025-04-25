@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h4>JS133. Save and load dark/light mode settings using LocalStorage. </h4>
+  <button onclick="toggleMode()">Toggle Mode</button>
+
+  <script>
+    function toggleMode() {
+      const currentMode = document.body.classList.contains('dark') ? 'dark' : 'light';
+      const newMode = currentMode === 'dark' ? 'light' : 'dark';
+  
+      document.body.className = newMode;
+      localStorage.setItem('theme', newMode);
+    }
+  
+    // Load theme on page load
+    window.onload = function() {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.body.className = savedTheme;
+    };
+  </script>
+  
+  <style>
+    body.dark {
+      background-color: #222;
+      color: white;
+    }
+    body.light {
+      background-color: white;
+      color: black;
+    }
+  </style>
+  
+
+</body>
+</html>

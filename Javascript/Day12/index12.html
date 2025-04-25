@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>JS156. Add new objects dynamically to an array. </h4>
+    <script>
+
+let employees = [
+  { name: "Harini", age: 30, position: "Developer" }
+];
+
+// Add new employee dynamically
+function addEmployee(name, age, position) {
+  employees.push({ name, age, position });
+}
+
+addEmployee("Keerthi", 28, "Tester");
+addEmployee("Sudha", 32, "HR");
+
+console.log(employees);
+
+
+    </script>
+</body>
+</html>
