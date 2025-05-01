@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>5. Fetch and display GitHub user profiles</h4>
+
+    <input id="username" placeholder="GitHub username">
+    <button id="fetchUser">Fetch Profile</button>
+    <div id="profile"></div>
+    
+    <script>
+    document.getElementById('fetchUser').addEventListener('click', async () => {
+      const username = document.getElementById('username').value;
+      const res = await fetch(`https://api.github.com/users/${username}`);
+      const user = await res.json();
+      
+      document.getElementById('profile').innerHTML = `
+        <img src="${user.avatar_url}" width="100" />
+        <h3>${user.name}</h3>
+        <p>${user.bio}</p>
+        <a href="${user.html_url}" target="_blank">View Profile</a>
+      `;
+    });
+    </script>
+    
+    
+
+</body>
+</html>

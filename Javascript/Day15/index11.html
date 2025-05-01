@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>11.Use finally to execute cleanup code even if an error occurs.</h4>
+    
+   <script>
+
+try {
+  throw new Error('Some error');
+} catch (e) {
+  console.error(e.message);
+} finally {
+  console.log('Cleanup done in finally block');
+}
+
+   </script>
+</body>
+</html>

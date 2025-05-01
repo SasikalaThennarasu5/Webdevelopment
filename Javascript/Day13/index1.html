@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+<h4>1. Fetch a random joke from an API and show it on the page</h4>
+
+<button id="jokeBtn">Get Joke</button>
+<p id="joke"></p>
+
+<script>
+document.getElementById('jokeBtn').addEventListener('click', async () => {
+  const res = await fetch('https://official-joke-api.appspot.com/random_joke');
+  const data = await res.json();
+  document.getElementById('joke').textContent = `${data.setup} - ${data.punchline}`;
+});
+</script>
+
+</html>
+</body>

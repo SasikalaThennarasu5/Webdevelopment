@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Catalog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🛍️ Product Catalog</h1>
+
+  <div class="controls">
+    <label>
+      <input type="checkbox" id="filterPrice" />
+      Show products below $500
+    </label>
+    <select id="sort">
+      <option value="default">Sort by</option>
+      <option value="priceAsc">Price: Low to High</option>
+    </select>
+  </div>
+
+  <div id="products" class="product-grid"></div>
+
+  <div id="details" class="modal hidden"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

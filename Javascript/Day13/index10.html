@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>10. Load data from an API when a button is clicked</h4>
+
+    <button id="loadData">Load Data</button>
+    <div id="data"></div>
+    
+    <script>
+    document.getElementById('loadData').addEventListener('click', async () => {
+      const res = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+      const todo = await res.json();
+      document.getElementById('data').innerHTML = `
+        <h4>${todo.title}</h4>
+        <p>Completed: ${todo.completed}</p>
+      `;
+    });
+    </script>
+    
+
+</body>
+</html>

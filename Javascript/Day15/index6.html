@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>6. Implement nested try...catch blocks to handle multiple errors.</h4>
+
+<script>
+
+try {
+  try {
+    let data = JSON.parse('{"name": "John"'); // Missing closing brace
+  } catch (innerError) {
+    console.error('JSON Error:', innerError.message);
+    throw new Error('Outer error triggered due to JSON failure');
+  }
+} catch (outerError) {
+  console.error('Outer Catch:', outerError.message);
+}
+
+
+
+
+</script>
+    
+</body>
+</html>

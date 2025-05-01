@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>13.Implement a real-world error logging system using LocalStorage.</h4>
+
+   <script>
+function logErrorToStorage(error) {
+  const logs = JSON.parse(localStorage.getItem('errorLogs')) || [];
+  logs.push({ message: error.message, time: new Date().toISOString() });
+  localStorage.setItem('errorLogs', JSON.stringify(logs));
+}
+try {
+  throw new Error('Something went wrong');
+} catch (e) {
+  logErrorToStorage(e);
+  console.log('Error logged to LocalStorage');
+}
+
+
+   </script>
+    
+    
+</body>
+</html>

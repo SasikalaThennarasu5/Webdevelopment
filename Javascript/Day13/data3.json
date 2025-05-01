@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Laptop",
+    "price": 899,
+    "category": "Electronics"
+  },
+  {
+    "name": "Headphones",
+    "price": 199,
+    "category": "Accessories"
+  },
+  {
+    "name": "Keyboard",
+    "price": 49,
+    "category": "Accessories"
+  }
+]

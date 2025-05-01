@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Air Quality Checker</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    select, #result { margin-top: 20px; display: block; }
+    .good { color: green; }
+    .moderate { color: orange; }
+    .unhealthy { color: red; }
+  </style>
+</head>
+<body>
+  <h1>🌍 Real-Time Air Quality Checker</h1>
+  <label for="city">Select a City:</label>
+  <select id="city">
+    <option value="Delhi">Delhi</option>
+    <option value="Mumbai">Mumbai</option>
+    <option value="London">London</option>
+    <option value="New York">New York</option>
+  </select>
+  <div id="result">AQI info will appear here...</div>
+
+  <script>
+const citySelect = document.getElementById('city');
+const resultDiv = document.getElementById('result');
+
+// Replace with your actual API token from IQAir or any AQI provider
+const API_KEY = 'demo'; // Replace this with a valid key
+const BASE_URL = 'https://api.waqi.info/feed';
+
+function fetchAQI(city) {
+  const url = `${BASE_URL}/${city}/?token=${API_KEY}`;
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      if (data.status === 'ok') {
+        const aqi = data.data.aqi;
+        const pm25 = data.data.iaqi.pm25?.v || 'N/A';
+        const pm10 = data.data.iaqi.pm10?.v || 'N/A';
+        const advice = getHealthAdvice(aqi);
+        resultDiv.innerHTML = `
+          <p><strong>City:</strong> ${city}</p>
+          <p><strong>AQI:</strong> <span class="${getAqiClass(aqi)}">${aqi}</span></p>
+          <p>PM2.5: ${pm25}, PM10: ${pm10}</p>
+          <p><em>Health Advice:</em> ${advice}</p>
+        `;
+      } else {
+        resultDiv.textContent = 'Error fetching data.';
+      }
+    })
+    .catch(error => {
+      console.error(error);
+      resultDiv.textContent = 'Failed to load AQI data.';
+    });
+}
+
+function getAqiClass(aqi) {
+  if (aqi <= 50) return 'good';
+  if (aqi <= 100) return 'moderate';
+  return 'unhealthy';
+}
+
+function getHealthAdvice(aqi) {
+  if (aqi <= 50) return 'Air quality is good. Enjoy your outdoor activities!';
+  if (aqi <= 100) return 'Air quality is acceptable. Sensitive people should be cautious.';
+  return 'Unhealthy air. Consider limiting outdoor exposure.';
+}
+
+citySelect.addEventListener('change', () => {
+  fetchAQI(citySelect.value);
+});
+
+// Fetch for default city on load
+fetchAQI(citySelect.value);
+
+
+
+  </script>
+
+
+
+</body>
+</html>

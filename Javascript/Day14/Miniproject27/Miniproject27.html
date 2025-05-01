@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Typing Speed Tester</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    #sentence { font-size: 1.2rem; margin: 20px 0; }
+    #result { margin-top: 15px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Typing Speed Tester</h1>
+  <div id="sentence">Loading sentence...</div>
+  <input type="text" id="input" placeholder="Start typing here..." />
+  <div id="result"></div>
+
+  <script>
+const sentenceElement = document.getElementById('sentence');
+const inputElement = document.getElementById('input');
+const resultElement = document.getElementById('result');
+
+let startTime;
+let currentSentence = '';
+
+// Fetch a random sentence
+function fetchSentence() {
+  fetch('https://api.quotable.io/random')
+    .then(response => response.json())
+    .then(data => {
+      currentSentence = data.content;
+      sentenceElement.textContent = currentSentence;
+      inputElement.value = '';
+      resultElement.textContent = '';
+      startTime = new Date().getTime();
+    })
+    .catch(err => {
+      sentenceElement.textContent = 'Failed to fetch sentence.';
+      console.error(err);
+    });
+}
+
+// Compare input to sentence
+inputElement.addEventListener('input', () => {
+  if (inputElement.value === currentSentence) {
+    const endTime = new Date().getTime();
+    const timeTaken = (endTime - startTime) / 1000; // seconds
+    const wordCount = currentSentence.split(' ').length;
+    const wpm = Math.round((wordCount / timeTaken) * 60);
+    resultElement.textContent = `🎉 Done! Your typing speed is ${wpm} WPM.`;
+    setTimeout(fetchSentence, 3000); // Load a new sentence after delay
+  }
+});
+
+fetchSentence();
+
+
+
+  </script>
+</body>
+</html>

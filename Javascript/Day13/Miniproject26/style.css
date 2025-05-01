@@ -1,0 +1,12 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  text-align: center;
+}
+#movieDetails {
+  margin-top: 20px;
+}
+img {
+  max-width: 200px;
+  border-radius: 10px;
+}

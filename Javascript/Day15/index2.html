@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h4>2. Catch and handle a Reference Error when trying to use an undefined variable. </h4>
+  
+  <script>
+
+try {
+  console.log(undefinedVariable);
+} catch (e) {
+  if (e instanceof ReferenceError) {
+    console.warn('Reference Error caught:', e.message);
+  }
+}
+
+
+
+  </script>
+
+  
+</body>
+</html>

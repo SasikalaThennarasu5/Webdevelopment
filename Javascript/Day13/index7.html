@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>7. Implement pagination using Fetch API</h4>
+
+    <div id="postList"></div>
+    <button id="prev">Prev</button>
+    <button id="next">Next</button>
+    
+    <script>
+    let page = 1;
+    
+    async function loadPage(pageNumber) {
+      const res = await fetch(`https://jsonplaceholder.typicode.com/posts?_page=${pageNumber}&_limit=5`);
+      const posts = await res.json();
+      
+      const postList = document.getElementById('postList');
+      postList.innerHTML = '';
+      
+      posts.forEach(post => {
+        const div = document.createElement('div');
+        div.textContent = post.title;
+        postList.appendChild(div);
+      });
+    }
+    
+    document.getElementById('prev').addEventListener('click', () => {
+      if (page > 1) {
+        page--;
+        loadPage(page);
+      }
+    });
+    
+    document.getElementById('next').addEventListener('click', () => {
+      page++;
+      loadPage(page);
+    });
+    
+    loadPage(page);
+    </script>
+    
+
+
+</body>
+</html>

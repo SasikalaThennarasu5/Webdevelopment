@@ -1,0 +1,31 @@
+body {
+    font-family: sans-serif;
+    padding: 20px;
+  }
+  .controls {
+    margin-bottom: 20px;
+  }
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  .product-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .modal {
+    position: fixed;
+    top: 20%;
+    left: 30%;
+    width: 40%;
+    background: white;
+    border: 2px solid #333;
+    padding: 20px;
+    z-index: 10;
+  }
+  .hidden {
+    display: none;
+  }
+  

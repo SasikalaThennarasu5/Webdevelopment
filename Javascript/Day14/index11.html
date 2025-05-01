@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>JS168. Remove a specific object from an array inside a JSON file.</h4>
+    
+   <script>
+
+// Existing data (can also come from localStorage)
+let employees = [
+  { name: "Sasi", age: 25, position: "Developer" },
+  { name: "Keerthi", age: 27, position: "Manager" },
+  { name: "Hari", age: 26, position: "Designer" }
+];
+
+// Function to remove an employee by name
+function removeEmployeeByName(name) {
+  employees = employees.filter(emp => emp.name !== name);
+
+  // Optionally, store in localStorage
+  localStorage.setItem('employees', JSON.stringify(employees));
+}
+
+// Remove "Hari"
+removeEmployeeByName("Hari");
+
+console.log(employees); // "Hari" will be removed from the array
+
+   </script>
+</body>
+</html>

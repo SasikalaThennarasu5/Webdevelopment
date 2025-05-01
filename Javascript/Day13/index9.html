@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>9. Fetch and display currency exchange rates</h4>
+
+    <button id="loadRates">Get Rates</button>
+<div id="rates"></div>
+
+<script>
+document.getElementById('loadRates').addEventListener('click', async () => {
+  const res = await fetch('https://api.exchangerate-api.com/v4/latest/USD');
+  const data = await res.json();
+  const rates = data.rates;
+  const ratesDiv = document.getElementById('rates');
+  ratesDiv.innerHTML = '';
+
+  for (let [currency, rate] of Object.entries(rates)) {
+    const p = document.createElement('p');
+    p.textContent = `${currency}: ${rate}`;
+    ratesDiv.appendChild(p);
+  }
+});
+</script>
+
+
+
+</body>
+</html>

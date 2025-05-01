@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>JS169. Fetch data from a JSON file and display it in a dropdown list. </h4>
+    <script>
+
+fetch('data12.json')
+  .then(res => res.json())
+  .then(data => {
+    const select = document.createElement("select");
+
+    data.forEach(item => {
+      const option = document.createElement("option");
+      option.textContent = item.name;
+      option.value = item.id;
+      select.appendChild(option);
+    });
+    
+    document.body.appendChild(select);
+  });
+
+
+    </script>
+</body>
+</html>

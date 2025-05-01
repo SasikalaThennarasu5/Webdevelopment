@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>10. Handle an API call failure using try...catch.</h4>
+
+   <script>
+    
+async function fetchData() {
+  try {
+    let response = await fetch('https://invalid-api.com/data');
+    if (!response.ok) throw new Error('Network response was not ok');
+    let data = await response.json();
+    console.log(data);
+  } catch (e) {
+    console.error('API Error:', e.message);
+  }
+}
+fetchData();
+
+
+
+   </script>
+
+</body>
+</html>
