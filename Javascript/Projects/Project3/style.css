@@ -1,0 +1,38 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #e0e0e0;
+  margin: 0;
+}
+
+.player {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-align: center;
+  width: 320px;
+}
+
+.controls button {
+  margin: 6px;
+  padding: 10px 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #2498db;
+  color: white;
+  cursor: pointer;
+}
+
+.controls button:hover {
+  background-color: #011102;
+}
+
+.volume input {
+  width: 100%;
+  margin-top: 10px;
+}

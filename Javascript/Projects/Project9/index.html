@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Online Bookstore</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📚 Online Bookstore</h1>
+
+    <div class="controls">
+      <input type="text" id="searchInput" placeholder="Search by title or author" />
+      <select id="categoryFilter">
+        <option value="all">All Categories</option>
+        <option value="Fiction">Fiction</option>
+        <option value="Non-fiction">Non-fiction</option>
+        <option value="Science">Science</option>
+      </select>
+      <input type="number" id="minPrice" placeholder="Min Price" />
+      <input type="number" id="maxPrice" placeholder="Max Price" />
+      <button onclick="renderBooks()">Filter</button>
+    </div>
+
+    <div id="bookList"></div>
+
+    <h2>🛒 Shopping Cart</h2>
+    <ul id="cartList"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

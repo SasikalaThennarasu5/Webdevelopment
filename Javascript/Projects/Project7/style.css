@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 30px;
+    background: #f4f4f4;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  form {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  input, button {
+    padding: 8px;
+    font-size: 14px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+  }
+  
+  th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+  }
+  
+  button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button.edit {
+    background-color: #ffc107;
+  }
+  
+  button.delete {
+    background-color: #dc3545;
+  }
+  

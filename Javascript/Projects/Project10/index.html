@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Employee Attendance System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>👨‍💼 Employee Attendance</h1>
+
+    <form id="employeeForm">
+      <input type="text" id="name" placeholder="Employee Name" required />
+      <input type="text" id="id" placeholder="Employee ID" required />
+      <input type="text" id="department" placeholder="Department" required />
+      <button type="submit">Add Employee</button>
+    </form>
+
+    <div class="filters">
+      <select id="filterDept">
+        <option value="all">All Departments</option>
+      </select>
+      <select id="filterStatus">
+        <option value="all">All Status</option>
+        <option value="Present">Present</option>
+        <option value="Absent">Absent</option>
+      </select>
+      <select id="sortBy">
+        <option value="name">Sort by Name</option>
+        <option value="attendance">Sort by Attendance Count</option>
+      </select>
+      <button onclick="renderEmployees()">Apply Filters</button>
+    </div>
+
+    <div id="employeeList"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+body {
+  background: #f2f2f2;
+}
+
+.drag-area {
+  border: 2px dashed #007bff;
+  padding: 50px;
+  border-radius: 10px;
+  background: #e9ecef;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.drag-area.dragover {
+  background: #d0ebff;
+}
+
+#filePreview img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+}
+
+#fileDetails {
+  font-size: 16px;
+}
