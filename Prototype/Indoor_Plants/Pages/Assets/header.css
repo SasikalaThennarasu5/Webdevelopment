@@ -1,0 +1,69 @@
+/* Custom Navbar */
+.custom-navbar {
+    background-color: #0D4F36; /* Deep green background */
+    padding: 1rem 0;
+    border-bottom: 4px solid #e0f2f1; /* light bottom border */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  /* Logo */
+  .logo-img {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+  }
+  
+  .brand-name {
+    font-family: "Quicksand", sans-serif;
+    color: #ffffff;
+    font-size: 1.5rem;
+  }
+  
+  /* Nav links */
+  .nav-link {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 0 10px;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-link:hover,
+  .nav-link.active {
+    text-decoration: underline wavy 2px #ffffff;
+    color: #ffffff;
+  }
+  
+  /* Icons */
+  .icon-links {
+    gap: 15px;
+  }
+  
+  .icon-link {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .icon-link:hover {
+    color:  #ffffff; /* hover effect */
+    text-decoration: none;
+  }
+  
+  /* Mobile adjustments */
+  @media (max-width: 991px) {
+    .icon-links {
+      margin-top: 10px;
+    }
+    .navbar-collapse {
+      background-color: #0D4F36;
+      padding: 1rem;
+      border-radius: 0 0 10px 10px;
+    }
+  }
+  

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Indoor Plant Shop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&
+family=Noto+Sans+JP:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:
+ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=
+Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Shafarik&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./Assets/header.css">
+  <link rel="stylesheet" href="./Assets/footer.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Quicksand", sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .steps {
+      text-align: center;
+      font-size: 1rem;
+      margin-bottom: 30px;
+    }
+
+    .steps span {
+      margin: 0 5px;
+      font-weight: bold;
+    }
+
+    .steps .active {
+      color: #01442c;
+    }
+
+    .cart-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      background-color: #e8f9f2;
+      padding: 30px;
+      border-radius: 12px;
+    }
+
+    .cart-items {
+      flex: 2;
+      min-width: 300px;
+    }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .cart-item img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-right: 20px;
+    }
+
+    .item-details {
+      flex: 1;
+    }
+
+    .item-details h3 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    .item-details p {
+      margin: 4px 0;
+      color: #444;
+      font-size: 0.95rem;
+    }
+
+    .item-details .price {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-top: 8px;
+    }
+
+    .quantity-control {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .quantity-control button {
+      background-color: #01442c;
+      color: white;
+      border: none;
+      padding: 5px 12px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .summary {
+      flex: 1;
+      min-width: 250px;
+      background-color: #dcf7eb;
+      padding: 20px;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .summary h3 {
+      margin-bottom: 20px;
+    }
+
+    .summary-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .summary-item.total {
+      border-top: 1px solid #999;
+      padding-top: 10px;
+      font-weight: bold;
+    }
+
+    .checkout-btn {
+      margin-top: 20px;
+      padding: 12px;
+      background-color: #01442c;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .secure {
+      display: flex;
+      align-items: center;
+      font-size: 0.9rem;
+      margin-top: 15px;
+      color: #333;
+    }
+
+    .secure::before {
+      content: "🔒";
+      margin-right: 5px;
+    }
+
+    @media (max-width: 768px) {
+      .cart-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg custom-navbar">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="./Assets/Images/Home/logo image.png" alt="Logo" class="logo-img">
+      <span class="brand-name">Indo-Green</span>
+    </a>
+
+    <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="./home.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./shop.html">Shop</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./aboutus.html">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./blog.html">Blog</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="d-flex align-items-center icon-links">
+      <a href="./cart.html" class="icon-link"><i class="fas fa-shopping-cart"></i></a>
+      <a href="./wishlist.html" class="icon-link"><i class="fas fa-heart"></i></a>
+      <a href="./login" class="icon-link"><i class="fas fa-user"></i></a>
+    </div>
+  </div>
+</nav>
+<!-- Navbar End -->
+
+  <h1>Cart</h1>
+  <div class="steps">
+    <span class="active">BAG</span> &gt; <span>ADDRESS</span> &gt; <span>PAYMENT</span>
+  </div>
+
+  <div class="cart-container">
+    <!-- Left Side - Items -->
+    <div class="cart-items">
+      <div class="cart-item" data-price="1200">
+        <img src="./Assets/Images/Bonsai/bonsai 1.png" alt="Fiddle Leaf Fig">
+        <div class="item-details">
+          <h3>Fiddle Leaf Fig</h3>
+          <p>DESK PLANTS</p>
+          <div class="price">₹ <span class="item-price">1200</span></div>
+        </div>
+        <div class="quantity-control">
+          <button onclick="changeQty(this, -1)">-</button>
+          <span class="qty">1</span>
+          <button onclick="changeQty(this, 1)">+</button>
+        </div>
+      </div>
+
+      <div class="cart-item" data-price="820">
+        <img src="./Assets/Images/Cactus/cactus 1.png" alt="Spade">
+        <div class="item-details">
+          <h3>Spade</h3>
+          <p>GARDENING ACCESSORIES</p>
+          <div class="price">₹ <span class="item-price">820</span></div>
+        </div>
+        <div class="quantity-control">
+          <button onclick="changeQty(this, -1)">-</button>
+          <span class="qty">1</span>
+          <button onclick="changeQty(this, 1)">+</button>
+        </div>
+      </div>
+
+      <div class="cart-item" data-price="550">
+        <img src="./Assets/Images/category/category cactus.png" alt="Fiddle Leaf Fig">
+        <div class="item-details">
+          <h3>Lavender</h3>
+          <p>HERBAL PLANTS</p>
+          <div class="price">₹ <span class="item-price">550</span></div>
+        </div>
+        <div class="quantity-control">
+          <button onclick="changeQty(this, -1)">-</button>
+          <span class="qty">1</span>
+          <button onclick="changeQty(this, 1)">+</button>
+        </div>
+      </div>
+
+      <div class="cart-item" data-price="1070">
+        <img src="./Assets/Images/DeskPlants/desk plant 2.png" alt="Fiddle Leaf Fig">
+        <div class="item-details">
+          <h3>Chinese Wisteria Bonsai</h3>
+          <p>BONSAI PLANTS</p>
+          <div class="price">₹ <span class="item-price">1070</span></div>
+        </div>
+        <div class="quantity-control">
+          <button onclick="changeQty(this, -1)">-</button>
+          <span class="qty">1</span>
+          <button onclick="changeQty(this, 1)">+</button>
+        </div>
+      </div>
+
+      <div class="cart-item" data-price="940">
+        <img src="Assets/Images/HerbalPlants/herbal 4.png" alt="Fiddle Leaf Fig">
+        <div class="item-details">
+          <h3>Christmas Cactus</h3>
+          <p>CACTUS</p>
+          <div class="price">₹ <span class="item-price">940</span></div>
+        </div>
+        <div class="quantity-control">
+          <button onclick="changeQty(this, -1)">-</button>
+          <span class="qty">1</span>
+          <button onclick="changeQty(this, 1)">+</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Side - Summary -->
+    <div class="summary">
+      <div>
+        <div class="summary-item">
+          <span>Subtotal</span>
+          <span>₹ <span id="subtotal">2020</span></span>
+        </div>
+        <div class="summary-item">
+          <span>Delivery Charges</span>
+          <span>₹ 0</span>
+        </div>
+        <div class="summary-item">
+          <span>Discount</span>
+          <span>- ₹ <span id="discount">220</span></span>
+        </div>
+        <div class="summary-item total">
+          <span>TOTAL</span>
+          <span>₹ <span id="total">1800</span></span>
+        </div>
+        <a href="./address.html"><button class="checkout-btn">CHECKOUT</button></a>
+      </div>
+      <div class="secure">100% Secure Payments</div>
+    </div>
+  </div>
+
+<!-- Footer Start -->
+<footer class="footer bg-dark-green text-white pt-5 pb-3">
+  <div class="container">
+    <div class="row text-center text-md-start align-items-start">
+      
+      <!-- Customer Care -->
+      <div class="col-md-4 mb-4">
+        <h5 class="fw-bold">Customer Care</h5>
+        <p class="mb-1">No.5, South Fairlands,<br>Yercaud Main Road, Salem, Tamilnadu</p>
+        <p class="mb-1">+91 90000 91010</p>
+        <p class="mb-1">+91 98547 54873</p>
+        <p>info@indogreen.com</p>
+      </div>
+
+      <!-- Center logo and quote -->
+      <div class="col-md-4 mb-4 text-center">
+        <img src="./Assets/Images/Home/logo image.png" alt="Logo" class="mb-3">
+        <p class="px-2">The seed of gardening is a love that never dies. But it never grows to the enduring happiness that the love of gardening provides the nature.</p>
+        
+        <!-- Social Icons -->
+        <div class="d-flex justify-content-center mt-3">
+          <a href="#" class="text-white me-3 fs-4"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-white me-3 fs-4"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-white me-3 fs-4"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-white me-3 fs-4"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="text-white me-3 fs-4"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="text-white fs-4"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+
+      <!-- Indo-Green Details -->
+      <div class="col-md-4 mb-4">
+        <h5 class="fw-bold">Indo-Green</h5>
+        <p class="mb-1">Reg: S1203014054</p>
+        <p class="mb-1">TIN: 109201GST1204</p>
+        <p><a href="#" class="text-white text-decoration-none">Privacy Policy</a></p>
+        <p><a href="#" class="text-white text-decoration-none">Terms of Use</a></p>
+      </div>
+
+    </div>
+
+    <hr class="text-white my-4">
+
+    <!-- Copyright -->
+    <div class="text-center small">
+      Indo-Green <span class="fs-5">©</span> 2022. All Rights Reserved
+    </div>
+
+  </div>
+</footer>
+<!-- Footer End -->
+
+
+  <script>
+    function changeQty(button, delta) {
+      const qtyEl = button.parentElement.querySelector(".qty");
+      let qty = parseInt(qtyEl.innerText);
+      qty = Math.max(1, qty + delta);
+      qtyEl.innerText = qty;
+
+      updatePrices();
+    }
+
+    function updatePrices() {
+      const items = document.querySelectorAll(".cart-item");
+      let subtotal = 0;
+
+      items.forEach(item => {
+        const pricePerItem = parseInt(item.getAttribute("data-price"));
+        const qty = parseInt(item.querySelector(".qty").innerText);
+        const itemPriceEl = item.querySelector(".item-price");
+        itemPriceEl.innerText = pricePerItem * qty;
+        subtotal += pricePerItem * qty;
+      });
+
+      const discount = 220;
+      const total = subtotal - discount;
+
+      document.getElementById("subtotal").innerText = subtotal;
+      document.getElementById("total").innerText = total;
+    }
+
+    updatePrices(); // Initial call
+  </script>
+</body>
+</html>

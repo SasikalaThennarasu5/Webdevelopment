@@ -1,0 +1,25 @@
+/* Custom Colors */
+.bg-dark-green {
+    background-color: #0b4d37; /* dark green similar to your image */
+  }
+  
+  /* Footer Styles */
+  .footer p, .footer a {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .footer img {
+    height: 60px;
+  }
+  
+  /* Responsive adjustment for mobile */
+  @media (max-width: 576px) {
+    .footer p {
+      font-size: 14px;
+    }
+    .footer img {
+      height: 50px;
+    }
+  }
+  
