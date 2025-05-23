@@ -532,6 +532,163 @@
                 padding: 2rem 0;
             }
         }
+        /* Responsive Media Queries */
+@media (max-width: 1199.98px) {
+    /* Tablet and small desktop */
+    #sidebar {
+        transform: translateX(-100%);
+        width: 280px;
+    }
+    
+    #sidebar.active {
+        transform: translateX(0);
+    }
+    
+    .mobile-nav-toggle {
+        display: flex;
+    }
+    
+    #content {
+        margin-left: 0;
+        padding: 1.5rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 991.98px) {
+    /* Small tablets */
+    .contact-info, .form-container {
+        padding: 30px;
+    }
+    
+    .resume .col-md-6 {
+        margin-bottom: 2rem;
+    }
+    
+    .personal-info {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 767.98px) {
+    /* Mobile landscape */
+    .section-title::after {
+        width: 200px;
+    }
+    
+    .contact-info {
+        border-radius: 10px 10px 0 0;
+    }
+    
+    .form-container {
+        border-radius: 0 0 10px 10px;
+    }
+    
+    .skills-grid {
+        flex-direction: column;
+    }
+    
+    .skill-column {
+        flex: 1 1 100%;
+    }
+    
+    #home h3 {
+        font-size: 1.8rem;
+    }
+    
+    .project-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    /* Mobile portrait */
+    html {
+        font-size: 14px;
+    }
+    
+    #sidebar {
+        width: 250px;
+        padding: 1.5rem;
+    }
+    
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .name {
+        font-size: 1.3rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .personal-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .contact-container .row {
+        flex-direction: column;
+    }
+    
+    .contact-container .col-lg-5, 
+    .contact-container .col-lg-7 {
+        width: 100%;
+    }
+    
+    .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .project-img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 400px) {
+    /* Small mobile devices */
+    #content {
+        padding: 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.3rem;
+    }
+    
+    #home h3 {
+        font-size: 1.5rem;
+    }
+    
+    .mobile-nav-toggle {
+        width: 35px;
+        height: 35px;
+        top: 15px;
+        left: 15px;
+    }
+    
+    .social-links a {
+        font-size: 1.3rem;
+    }
+    
+    .project-tech {
+        flex-wrap: wrap;
+    }
+}
     </style>
 </head>
 <body>
@@ -744,8 +901,8 @@
                             <span class="tech-item">Bootstrap</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://sasikalathennarasu5.github.io/Webdevelopment/Prototype/TOurs_and_Travels/Pages/home.html   "><i class="fab fa-github"></i> Code</a>
-                            <a href="https://sasikalathennarasu5.github.io/Webdevelopment/Prototype/TOurs_and_Travels/Pages/home.html"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://sasikalathennarasu5.github.io/Webdevelopment/Prototype/DK_Bridal_jewellery/pages/home.html"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://sasikalathennarasu5.github.io/Webdevelopment/Prototype/DK_Bridal_jewellery/pages/home.html"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                         </div>
                     </div>
                 </div>
