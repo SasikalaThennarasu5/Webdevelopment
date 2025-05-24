@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7f9fc;
+}
+
+.app-title {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 2rem;
+  color: #333;
+}
