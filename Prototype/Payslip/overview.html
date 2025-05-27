@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Title -->
+    <title>Overview</title>
+
+    <!-- Google Fonts (Quicksand) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap"rel="stylesheet"/>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"rel="stylesheet"/>
+
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome (for icons like bell, search) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-wS2eQoJjq4UzZ+dr8tTfVZaRKwYO2S8IKgWSdXNKvQDyZ/j4rtaG7wGj8ZBa8kNLO7nD0E1hx9JcY0ZC52F5xA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Quicksand", sans-serif;
+        background-color: white;
+      }
+      .sidebar {
+        background-color: #455a64;
+        color: white;
+        min-height: 100vh;
+        position: relative;
+      }
+
+      .sidebar .nav-link {
+        color: #fff;
+        margin-bottom: 10px;
+      }
+
+      .sidebar .nav-link.active {
+        color: yellow;
+        font-weight: bold;
+      }
+
+      .card-icon {
+        font-size: 1.5rem;
+      }
+      .highlight {
+        background-color: #f8cc14;
+      }
+.container {
+  background-color: #fff4d4;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.05);
+}
+      .calendar {
+        background-color: #feeba8;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      .calendar td,
+      .calendar th {
+        background-color: #feeba8;
+        border: solid 0px #feeba8;
+        text-align: center;
+        padding: 5px;
+      }
+      .calendar .today {
+        background-color: #fcd900;
+        border-radius: 50%;
+      }
+      .meetings {
+        background-color: #fedeaa;
+      }
+
+      .meeting-item {
+        background-color: #fedeaa;
+        border: 2px black solid;
+        padding: 12px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        font-weight: 600;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .meeting-item span {
+        font-weight: normal;
+        font-size: 14px;
+        text-align: right;
+      }
+
+      .topbar {
+        background-color: #fff4d4;
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+
+        <!-- Sidebar -->
+        <div class="col-md-2 sidebar p-3">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link text-warning fw-bold" href="./overview.html"
+                ><i class="bi bi-speedometer2 me-2"></i>Overview</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="./payroll.html"
+                ><i class="bi bi-currency-dollar me-2"></i>Payroll</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="./payslip_corrected.html"
+                ><i class="bi bi-receipt me-2"></i>Payslip</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Main Content -->
+
+        <div class="col-md-10 p-4">
+          <div class="topbar d-flex justify-content-between align-items-center">
+            <h5>Good Morning !!!</h5>
+            <div class="d-flex align-items-center">
+              <input
+                type="text"
+                class="form-control me-2"
+                placeholder="Search"
+              />
+              <i class="fas fa-search me-4"></i>
+              <i class="fas fa-bell me-4"></i>
+              <img
+                src="./assets/images/Profile.png"
+                class="rounded-circle"
+                alt="user"
+              />
+            </div>
+          </div>
+
+          <!-- Info Cards -->
+          <div class="container  p-4 rounded shadow-sm">
+            <div class="row mb-4">
+              <div class="col-md-3">
+                <div class="card highlight text-center p-3">
+                  <div class="card-icon mb-2"><i class="fas fa-users"></i></div>
+                  <strong>Total Employees</strong>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="card highlight text-center p-3">
+                  <div class="card-icon mb-2">
+                    <i class="fas fa-user-minus"></i>
+                  </div>
+                  <strong>Number Of leave</strong>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="card highlight text-center p-3">
+                  <div class="card-icon mb-2">
+                    <i class="fas fa-user-plus"></i>
+                  </div>
+                  <strong>New Employee’s</strong>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="card highlight text-center p-3">
+                  <div class="card-icon mb-2"><i class="fas fa-plane"></i></div>
+                  <strong>Holiday of this Year</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Calendar and Meetings -->
+            <div class="row">
+              <div class="col-md-6">
+                <h5>Calendar</h5>
+                <div class="calendar">
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-2"
+                  >
+                    <strong id="monthYear"></strong>
+                    <div>
+                      <button
+                        class="btn btn-sm btn-outline-dark"
+                        onclick="changeMonth(-1)"
+                      >
+                        &lt;
+                      </button>
+                      <button
+                        class="btn btn-sm btn-outline-dark"
+                        onclick="changeMonth(1)"
+                      >
+                        &gt;
+                      </button>
+                    </div>
+                  </div>
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Sun</th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                      </tr>
+                    </thead>
+                    <tbody id="calendarBody"></tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="meetings p-3 rounded">
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-3"
+                  >
+                    <h5>Upcoming Meetings</h5>
+                    <a href="#" class="text-decoration-none text-danger"
+                      >View All</a
+                    >
+                  </div>
+                  <div class="meeting-item">
+                    Client Meeting - 10.00 AM <span>Wed<br />June 4</span>
+                  </div>
+                  <div class="meeting-item">
+                    Team Meeting - 11.00 AM <span>Fri<br />June 6</span>
+                  </div>
+                  <div class="meeting-item">
+                    HR Interview - 2.00 PM <span>Mon<br />June 9</span>
+                  </div>
+                  <div class="meeting-item">
+                    Client Meeting - 4.00 PM <span>Wed<br />June 11</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      let currentDate = new Date();
+
+      function renderCalendar(date) {
+        const monthYear = document.getElementById("monthYear");
+        const calendarBody = document.getElementById("calendarBody");
+
+        const year = date.getFullYear();
+        const month = date.getMonth();
+        monthYear.textContent =
+          date.toLocaleString("default", { month: "long" }) + " " + year;
+
+        const firstDay = new Date(year, month, 1).getDay();
+        const lastDate = new Date(year, month + 1, 0).getDate();
+
+        calendarBody.innerHTML = "";
+        let row = "<tr>";
+        for (let i = 0; i < firstDay; i++) row += "<td></td>";
+
+        for (let day = 1; day <= lastDate; day++) {
+          if ((firstDay + day - 1) % 7 === 0 && day !== 1) {
+            row += "</tr><tr>";
+          }
+          const isToday =
+            day === new Date().getDate() &&
+            month === new Date().getMonth() &&
+            year === new Date().getFullYear();
+          row += `<td class="${isToday ? "today" : ""}">${day}</td>`;
+        }
+        row += "</tr>";
+        calendarBody.innerHTML += row;
+      }
+
+      function changeMonth(offset) {
+        currentDate.setMonth(currentDate.getMonth() + offset);
+        renderCalendar(currentDate);
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        renderCalendar(currentDate);
+      });
+    </script>
+  </body>
+</html>

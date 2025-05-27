@@ -1,0 +1,95 @@
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-color: #fef5d0;
+}
+
+.sidebar {
+        background-color: #455a64;
+        color: white;
+        min-height: 100vh;
+        position: relative;
+      }
+
+      .sidebar .nav-link {
+        color: #fff;
+        margin-bottom: 10px;
+      }
+
+      .sidebar .nav-link.active {
+        color: yellow;
+        font-weight: bold;
+      }
+.main-content h2 {
+  font-weight: 700;
+}
+
+.search-bar input {
+  border-radius: 5px 0 0 5px;
+}
+
+.search-bar .btn {
+  background-color: #F8CC14;
+  border-radius: 0 5px 5px 0;
+}
+
+.info-card {
+  background-color: #F8CC14;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.info-card .icon {
+  background-color: #455A64;
+  color: white;
+  width: 45px;
+  height: 45px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.calendar {
+  background-color: #FFF6D2;
+}
+
+.meetings {
+  background-color: #FEEBA8;
+}
+
+.meeting-item {
+  background-color: #FEEBA8;
+  border: 2px black solid;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.meeting-item span {
+  font-weight: normal;
+  font-size: 14px;
+  text-align: right;
+}
+
+
+.sidebar {
+  width: 220px;
+  height: 100vh;
+}
+
+.card input {
+  background-color: #fff9db;
+  border: 1px solid #ccc;
+}
+
+.card input:focus {
+  border-color: #ffc107;
+  box-shadow: none;
+}
+
