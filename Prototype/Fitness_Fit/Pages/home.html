@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fitness Fit Home</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="home.css">
+
+  <link rel="stylesheet" href="footer.css">
+
+</head>
+
+<body>
+
+ 
+  <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="./assets/images/logo/Screenshot 2025-05-10 085120.png" alt="Fitness Fit Logo" height="80">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+
+
+         <ul class="navbar-nav me-auto ms-auto text-center">
+          <li class="nav-item"><a class="nav-link" href="home.html">HOME <i class="fas fa-home nav-icon"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="start.html">START <i class="fas fa-play nav-icon"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="train.html">TRAIN <i class="fas fa-dumbbell nav-icon"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="progress.html">PROGRESS <i class="fas fa-chart-line nav-icon"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="nutrition.html">NUTRITION <i class="fas fa-apple-alt nav-icon"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="plans.html">PLANS <i class="fas fa-running nav-icon"></i></a></li>
+        </ul>
+
+        <div class="d-flex">
+          <a href="#" class="btn join-btn">JOIN NOW</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <script>
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
+
+  <!-- Hero Section -->
+ <div class="container-fluid p-0">
+    <section class="hero-section d-flex align-items-center text-white">
+      <div class="container">
+        <div class="row align-items-center text-center text-lg-start">
+
+          <!-- Left image -->
+          <div class="col-lg-3 d-none d-lg-block">
+            <img src="./assets/images/hero/img1-removebg-preview.png" alt="Fit Woman" class="img-fluid hero-img left-img">
+          </div>
+
+          <!-- Center text -->
+          <div class="col-lg-6">
+            <h1 class="hero-heading">FIT YOUR <br> BODY <br> WITH US</h1>
+            <a href="#" class="btn learn-btn mt-3">Learn More</a>
+            <p class="hero-subtext mt-4">We have <strong>1500M2</strong> Of <br> Modern Space <br> Exercise</p>
+          </div>
+
+          <!-- Right image -->
+          <div class="col-lg-3 d-none d-lg-block text-end">
+            <img src="./assets/images/hero/img2-removebg-preview.png" alt="Fit Man" class="img-fluid hero-img right-img">
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+  
+
+<div class="container-fluid hero-section">
+  <div class="row align-items-center">
+    
+    <!-- Left Side: Single Image -->
+    <div class="col-md-6 mb-4 mb-md-0">
+      <img src="./assets/images/home/fitness_collage.jpg" alt="Fitness Collage" class="img-fluid w-100 rounded-start">
+    </div>
+
+    <!-- Right Side: Content Section -->
+    <div class="col-md-6 text-white text-md-start text-center content-area">
+      <h1 class="display-4 fw-bold">Run Your Journey<br>With Us.</h1>
+      <p class="lead">
+        Whether you’re just starting out, or your shoes have already seen many miles, 
+        we’ll be by your side for every stride. All you have to do is get out the door, 
+        and we’ll take it from there.
+      </p>
+      <button class="btn btn-light btn-lg fw-bold mb-4">Start Running</button>
+
+      <!-- Review Box -->
+      <div class="review-box d-flex align-items-start p-3 rounded shadow">
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde" alt="User" class="rounded-circle me-3 review-img">
+        <div>
+          <strong>Review By Helan,</strong>
+          <p>“Running isn’t always pretty, but its capability to change your life is incredible!”</p>
+
+          <div class="play-box d-flex justify-content-between align-items-center mt-2 p-2 rounded">
+            <div>
+              <span class="guided-label">GUIDED WORKOUT</span><br />
+              <em><strong>I AM A RUNNER!</strong></em><br />
+              <small>30mins · All Levels</small>
+            </div>
+            <button class="btn btn-primary play-btn">▶</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+  <script>
+    function playAudio() {
+      alert("Playing 'I Am a Runner!' guided workout...");
+    }
+  </script>
+
+  <div class="container section-wrapper">
+    <div class="row align-items-center">
+      <!-- Text Content -->
+      <div class="col-lg-6 text-lg-start text-center mb-4 mb-lg-0">
+        <h1 class="main-title">Training that<br>match your pace.</h1>
+        <p class="description">
+          With flexible Training Plans, Guided Workouts and advanced Insights, we’ll help you reach your goals on your schedule.
+          You let us know where you’re at and we’ll provide the coaching to take you the rest of the way.
+        </p>
+        <button class="btn btn-schedule">Start Schedule</button>
+      </div>
+
+      <!-- Race Plan Card -->
+      <div class="col-lg-6">
+        <div class="race-card shadow">
+          <div class="race-header">
+            Race Plan
+          </div>
+          <div class="race-body">
+            <p class="mb-2"><strong>Jul 28 - Aug 3, 2025</strong></p>
+            <div class="calendar-row fw-bold">
+              <span>SUN</span><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span>
+            </div>
+            <div class="calendar-row weather-icons text-muted">
+              <span>–</span><span>–</span><span>–</span><span>–</span>
+              <span><i class="fas fa-cloud-showers-heavy"></i></span>
+              <span><i class="fas fa-sun"></i></span>
+              <span><i class="fas fa-cloud-sun"></i></span>
+            </div>
+
+            <p class="mt-4 fw-bold">Workout This Week</p>
+
+            <div class="workout-card d-flex align-items-start">
+              <div class="me-3">
+                <div class="workout-date">THU<br>27</div>
+                <div><i class="fas fa-cloud-showers-heavy weather-icon"></i></div>
+              </div>
+              <div>
+                <div><strong>2.0 mi Relaxed Run</strong></div>
+                <div>10:10–11:10 min/mi</div>
+              </div>
+            </div>
+
+            <div class="workout-card d-flex align-items-start">
+              <div class="me-3">
+                <div class="workout-date">FRI<br>28</div>
+                <div><i class="fas fa-sun weather-icon"></i></div>
+              </div>
+              <div>
+                <div><strong>1.9 mi Warm Up & Run</strong></div>
+                <div>07:10–11:10 min/mi</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container find-yourself-section text-center ">
+    <h2 class="section-heading">FIND YOURSELF </h2>
+
+    <div class="row justify-content-center mt-5">
+      <!-- Shoe Finder Card -->
+      <div class="col-md-6 col-lg-5 mb-6">
+        <div class="card-custom" style="background-image: url('./assets/images/home/shoe.jpeg')">
+          <div class="card-dark-overlay">
+            <h3>Find your running<br>Shoe match.</h3>
+            <button class="btn card-button btn-light-custom">Use Our Shoe Finder</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Runkeeper Go Card -->
+      <div class="col-md-6 col-lg-5 mb-6">
+        <div class="card-custom" style="background-image: url('./assets/images/home/runner-male-running-jogging.jpg')">
+          <h3 style="color: black; text-align: left;"><strong>Runkeeper</strong> <span style="color: #0066ff;">GO!</span></h3>
+          <div style="background: white; color: black; padding: 15px 20px; border-radius: 30px; font-size: 0.95rem; font-style: italic; font-weight: 500; max-width: 80%; text-align: left;">
+            Upgrade to a Runkeeper Go membership now and get access to Training Plans, Live Tracking and in-depth Insights.
+          </div>
+          <button class="btn card-button btn-dark-custom mt-3">Get Started</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="reviews-section">
+    <h2>REVIEWS & VICTORIES</h2>
+
+    <div class="container">
+      <div class="row justify-content-center g-4">
+        <!-- Testimonial 1 -->
+        <div class="col-md-6">
+          <div class="testimonial-card">
+            <div class="testimonial-text">
+              Fitness fit has made things very easy for my team<br>
+              we have gained speed, and strength
+            </div>
+            <div class="reviewer">
+              <img src="./assets/images/home/pexels-olly-3760259.jpg" alt="Alice Silverson">
+              <div>
+                <div class="reviewer-name">Alice Silverson</div>
+                <div class="reviewer-title">Fitness new user</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="col-md-6">
+          <div class="testimonial-card">
+            <div class="testimonial-text">
+              Fitness fit has made things very easy for my team<br>
+              we have gained speed, and strength
+            </div>
+            <div class="reviewer">
+              <img src="./assets/images/home/pexels-olly-3799447.jpg" alt="Martin Lucas">
+              <div>
+                <div class="reviewer-name">Martin Lucas</div>
+                <div class="reviewer-title">Fitness new user</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="faq-section">
+    <h2>FAQ FOR REVIEWS</h2>
+    <div class="container">
+      <div class="accordion" id="faqAccordion">
+        
+        <!-- FAQ 1 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqHeading1">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="false" aria-controls="faqCollapse1">
+              1.) How does the fitness tracker work?
+            </button>
+          </h2>
+          <div id="faqCollapse1" class="accordion-collapse collapse" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Our fitness tracker records your daily steps, calories burned, heart rate, and workout activity using your phone or wearable device sensors.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqHeading2">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+              2.) Is my health data safe and private?
+            </button>
+          </h2>
+          <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Yes! We use end-to-end encryption and never share your personal health data without your consent. You have full control over what you choose to track and store.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqHeading3">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+              3.) Does the app include a meal or diet planner?
+            </button>
+          </h2>
+          <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Yes, the app includes a built-in meal planner and food tracker. You can set daily calorie goals, log meals, and get healthy eating tips based on your fitness goals.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+ <!-- Footer -->
+  <footer class="footer">
+    <div class="container-fluid">
+      <div class="row align-items-start">
+        <!-- Logo -->
+        <div class="col-md-3 text-center text-md-start footer-logo mb-4 mb-md-0">
+          <img src="assets/images/logo/footerlogo.png" alt="Fitness Fit Logo" />
+          <p class="mt-3 mb-0">&copy; 2025 Fitness Fit<br />All Rights Reserved.</p>
+        </div>
+
+        <!-- Menu Links -->
+        <div class="col-md-3">
+          <div class="row">
+            <div class="col-6">
+              <a href="#">HOME</a><br />
+              <a href="#">TRAIN</a><br />
+              <a href="#">PROGRESS</a><br />
+              <a href="#">PLANS</a>
+            </div>
+            <div class="col-6">
+              <a href="#">NUTRITION</a><br />
+              <a href="#">HELP</a><br />
+              <a href="#">Privacy Policy</a><br />
+              <a href="#">Cookie Policy</a>
+            </div>
+            <div class="col-12 mt-2">
+              <a href="#">Community Guidelines</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social & App -->
+        <div class="col-md-3 offset-md-1 text-center text-md-start">
+          <div class="footer-title">Follow Us On :</div>
+          <div class="social-icons mb-3">
+            <a href="#"><img src="assets/images/icon/instagram.png" height="30px" width="30px"></a>
+            <a href="#"><img src="assets/images/icon/communication.png" height="30px" width="30px"></a>
+            <a href="#"><img src="assets/images/icon/twitter.png" height="30px" width="30px"></a>
+            <a href="#"><img src="assets/images/icon/youtube.png" height="30px" width="30px"></a>
+          </div>
+        </div>
+
+        <div class="col-md-2">
+          <div class="app-section">
+            <div class="footer-title">GET THE APP</div>
+            <a href="#">
+              <img
+                src="./assets/images/logo/appstore.png"
+                class="store-badge"
+                alt="App Store"
+              />
+            </a>
+            <a href="#">
+              <img
+                src="./assets/images/logo/googleplay.png"
+                class="store-badge"
+                alt="Google Play"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const path = window.location.pathname;
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (path.includes(href)) {
+        link.classList.add('active-nav');
+        const iconSpan = link.querySelector('.icon-placeholder');
+
+        // Choose icon based on link
+        let iconHTML = '';
+        if (href.includes('home')) iconHTML = '<i class="fas fa-home ms-2"></i>';
+        else if (href.includes('start')) iconHTML = '<i class="fas fa-play ms-2"></i>';
+        else if (href.includes('train')) iconHTML = '<i class="fas fa-running ms-2"></i>';
+        else if (href.includes('progress')) iconHTML = '<i class="fas fa-chart-line ms-2"></i>';
+        else if (href.includes('nutrition')) iconHTML = '<i class="fas fa-apple-alt ms-2"></i>';
+        else if (href.includes('plans')) iconHTML = '<i class="fas fa-calendar-alt ms-2"></i>';
+
+        iconSpan.innerHTML = iconHTML;
+      }
+    });
+  });
+</script>
+
+
+
+</body>
+</html>

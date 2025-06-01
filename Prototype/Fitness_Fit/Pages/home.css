@@ -1,0 +1,627 @@
+/* Background Gradient */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  /* Full viewport height linear gradient */
+  background: linear-gradient(to bottom, #324361, #3869b8, #3a81f5, #3c83f7);
+  background-attachment: fixed;  /* keeps background fixed during scroll */
+  background-repeat: no-repeat;
+  background-size: cover; /* ensures gradient fills full body */
+}
+
+.navbar-custom {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+ padding: 25px 20px;
+}
+
+
+
+    .nav-link {
+      color: white !important;
+      font-weight: 600;
+      font-size: 0.8rem;
+      margin: 0 15px;
+      position: relative;
+      padding-bottom: 5px;
+    }
+
+    .nav-link .nav-icon {
+      display: none;
+      margin-left: 5px;
+    }
+
+    .nav-link.active {
+      border-bottom: 2px solid white;
+    }
+
+    .nav-link.active .nav-icon {
+      display: inline-block;
+    }
+
+    
+
+    .join-btn {
+      background: white;
+      color: black;
+      font-weight: bold;
+      padding: 12px 30px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      transition: background 0.3s ease;
+    }
+
+    .join-btn:hover {
+      background: #f0f0f0;
+    }
+
+    .navbar-brand img {
+      height: 70px;
+    }
+
+    .navbar-toggler {
+      border: none;
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    @media (max-width: 768px) {
+      .join-btn {
+        margin-top: 10px;
+        width: 100%;
+      }
+    }
+
+
+/* Hero Section */
+.hero-section {
+  min-height: 70vh;
+  background: linear-gradient(to bottom, #2e3b55, #3a81f5);
+  overflow: hidden;
+  position: relative;
+  text-shadow: 1px 1px 4px #00000055;
+  padding: 20px;
+}
+
+.hero-img {
+  max-height: 100vh;
+  object-fit: contain;
+}
+
+.left-img {
+  transform: scale(1.5) translateX(-15%);
+}
+
+.right-img {
+  transform: scale(1.4) translateX(15%);
+}
+
+.hero-heading {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  line-height: 1.3;
+  color: #ffffff;
+  
+}
+
+.learn-btn {
+  background-color: #ffffff;
+  color: #000;
+  font-weight: 600;
+  padding: 10px 30px;
+  border-radius: 30px;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border: none;
+}
+
+.learn-btn:hover {
+  background-color: #f8cc14;
+  color: black;
+}
+
+.hero-subtext {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+@media (max-width: 992px) {
+  .left-img, .right-img {
+    display: none;
+  }
+
+  .hero-heading {
+    font-size: 2.4rem;
+  }
+
+  .hero-subtext {
+    font-size: 1rem;
+  }
+}
+
+/* Section Wrapper */
+.section-wrapper {
+  padding: 60px 20px;
+}
+
+/* Run Section */
+.img-fluid {
+  border-radius: 20px;
+  object-fit: cover;
+  height: auto;
+}
+
+.title {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.btn-start {
+  background: white;
+  color: black;
+  font-weight: 600;
+  padding: 10px 30px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+}
+
+.review-box {
+  background: #ffffffdd;
+  color: #000;
+  border-radius: 15px;
+  max-width: 500px;
+}
+
+
+.review-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+.play-box {
+  background-color: #e5edff;
+  color: #1c3d6b;
+  border-radius: 10px;
+  padding: 10px 15px;
+}
+
+
+.play-btn {
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background-color: #3b82f6;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.guided-label {
+  font-size: 12px;
+  background-color: #3b82f6;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+/* Image Grid */
+.img-grid {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.img-grid img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+}
+
+/* Training Section */
+.main-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: white;
+}
+
+.description {
+  font-size: 1.1rem;
+  margin-top: 20px;
+  max-width: 500px;
+  color: white;
+}
+
+.btn-schedule {
+  background-color: white;
+  color: black;
+  font-weight: 600;
+  padding: 10px 30px;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  margin-top: 30px;
+}
+
+.race-card {
+  background-color: white;
+  color: black;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.race-header {
+  background-color: #4285f4;
+  color: white;
+  padding: 15px 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.race-body {
+  padding: 20px;
+}
+
+.calendar-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.calendar-row span {
+  text-align: center;
+  flex: 1;
+}
+
+.weather-icons span i {
+  font-size: 1.2rem;
+}
+
+.workout-card {
+  background-color: #90caf9;
+  border-radius: 12px;
+  padding: 10px 15px;
+  margin-top: 10px;
+}
+
+.workout-date {
+  font-weight: 600;
+}
+
+.weather-icon {
+  margin-right: 5px;
+}
+
+@media (max-width: 767px) {
+  .main-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .description,
+  .btn-schedule {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .race-card {
+    margin-top: 30px;
+  }
+}
+
+/* Find Yourself Section */
+.find-yourself-section {
+  padding: 60px 20px;
+}
+
+.section-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  color: white;
+}
+
+.section-heading::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 20px;
+  background: url('https://i.imgur.com/gPNzYcE.png') no-repeat center;
+  background-size: contain;
+  margin-top: -10px;
+}
+
+.card-custom {
+  border-radius: 25px;
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  min-height: 300px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card-dark-overlay {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 25px;
+  padding: 20px;
+}
+
+.card-custom h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.card-custom p {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.card-button {
+  margin-top: 20px;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 25px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.btn-light-custom {
+  background-color: white;
+  color: black;
+}
+
+.btn-dark-custom {
+  background-color: black;
+  color: white;
+}
+
+@media (max-width: 767px) {
+  .section-heading {
+    font-size: 2rem;
+  }
+
+  .card-custom {
+    margin-bottom: 30px;
+  }
+}
+
+/* Reviews Section */
+.reviews-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.reviews-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  font-weight: bold;
+  color: white;
+}
+
+.testimonial-card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  color: black;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.testimonial-text {
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-align: left;
+  line-height: 1.6;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.testimonial-text::before {
+  content: "“";
+  font-size: 2rem;
+  position: absolute;
+  left: -20px;
+  top: -10px;
+  color: black;
+}
+
+.testimonial-text::after {
+  content: "”";
+  font-size: 2rem;
+  position: absolute;
+  right: -20px;
+  bottom: -10px;
+  color: black;
+}
+
+.reviewer {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 15px;
+}
+
+.reviewer img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+}
+
+.reviewer-name {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.reviewer-title {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+@media (max-width: 767px) {
+  .testimonial-text {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .reviewer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .reviewer img {
+    margin-bottom: 10px;
+  }
+}
+
+/* FAQ Section */
+.faq-section {
+  padding: 60px 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.faq-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.accordion-button {
+  background-color: white;
+  border-radius: 15px !important;
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: black;
+  padding: 20px;
+}
+
+.accordion-button:not(.collapsed) {
+  color: black;
+  background-color: #f8f9fa;
+  box-shadow: none;
+}
+
+.accordion-item {
+  background-color: transparent;
+  border: none;
+  margin-bottom: 15px;
+}
+
+.accordion-body {
+  background-color: white;
+  border-radius: 0 0 15px 15px;
+  padding: 20px;
+  color: #333;
+  font-size: 1rem;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .accordion-button {
+    font-size: 1.1rem;
+    text-align: left;
+  }
+}
+/* Hero wrapper provides padding around content */
+.hero-wrapper {
+  min-height: 70vh;
+  background-color: transparent;
+  
+}
+
+/* Hero box holds background image and content */
+.hero-box {
+  background: url('./assets/images/start/pexels-ketut-subiyanto-5038839.jpg') no-repeat center right;
+  background-size: cover;
+  background-color: #fefefe;
+  height: 80vh;
+  
+}
+
+/* QR Box styling */
+.qr-box {
+  text-align: center;
+}
+
+.hero-section {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #1c355e 0%, #3c75f0 100%);
+  color: white;
+  padding: 3rem 1rem;
+}
+
+.workout-box {
+  background-color: #e2e9fb;
+}
+
+.play-button {
+  font-size: 1.5rem;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.challenge-section {
+  background: linear-gradient(to bottom, #1c355e 0%, #3c75f0 100%);
+  color: white;
+}
+
+.rotate-left {
+  transform: rotate(-5deg);
+  transition: transform 0.3s;
+}
+
+.rotate-right {
+  transform: rotate(5deg);
+  transition: transform 0.3s;
+}
+
+.rotate-left:hover,
+.rotate-right:hover {
+  transform: rotate(0deg);
+}

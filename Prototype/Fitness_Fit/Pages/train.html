@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&
+family=Noto+Sans+JP:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght
+@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,
+600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Shafarik&display=swap"
+ rel="stylesheet">
+  <title>Training Banner</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="footer.css">
+  <style>
+
+    html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  /* Full viewport height linear gradient */
+  background: linear-gradient(to bottom, #324361, #3869b8, #3a81f5, #3c83f7);
+  background-attachment: fixed;  /* keeps background fixed during scroll */
+  background-repeat: no-repeat;
+  background-size: cover; /* ensures gradient fills full body */
+}
+    .navbar-custom {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+ padding: 25px 20px;
+}
+
+
+
+    .nav-link {
+      color: white !important;
+      font-weight: 600;
+      font-size: 0.8rem;
+      margin: 0 15px;
+      position: relative;
+      padding-bottom: 5px;
+    }
+
+    .nav-link .nav-icon {
+      display: none;
+      margin-left: 5px;
+    }
+
+    .nav-link.active {
+      border-bottom: 2px solid white;
+    }
+
+    .nav-link.active .nav-icon {
+      display: inline-block;
+    }
+
+    
+
+    .join-btn {
+      background: white;
+      color: black;
+      font-weight: bold;
+      padding: 12px 30px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      transition: background 0.3s ease;
+    }
+
+    .join-btn:hover {
+      background: #f0f0f0;
+    }
+
+    .navbar-brand img {
+      height: 70px;
+    }
+
+    .navbar-toggler {
+      border: none;
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    @media (max-width: 768px) {
+      .join-btn {
+        margin-top: 10px;
+        width: 100%;
+      }
+    }
+
+
+    .banner-container {
+      background-image: url('./assets/images/train/img1.jpg'); /* Replace with actual image URL */
+      background-size: cover;
+      background-position: center;
+      border-radius: 1rem;
+      overflow: hidden;
+      color: white;
+      padding: 2rem;
+      position: relative;
+      min-height: 500px;
+    }
+
+    .banner-overlay {
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 1rem;
+      padding: 2rem;
+      min-height: 500px;
+    }
+
+    .banner-text h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      line-height: 1.2;
+    }
+
+    .banner-text p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-top: 1rem;
+    }
+
+    .qr-box {
+      background: white;
+      color: black;
+      border-radius: 1rem;
+      padding: 1rem;
+      text-align: center;
+      width: 150px;
+    }
+
+    .qr-box img {
+      width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 768px) {
+      .banner-text h1 {
+        font-size: 2.2rem;
+      }
+
+      .qr-box {
+        margin-top: 1.5rem;
+      }
+    }
+    
+    .training-section {
+      text-align: center;
+      padding: 4rem 1rem;
+    }
+
+    .training-section h1 {
+      font-weight: 700;
+      font-size: 2.5rem;
+    }
+
+    .training-section p {
+      max-width: 700px;
+      margin: 1rem auto 2rem;
+      font-size: 1.2rem;
+      color: #dfefff;
+    }
+
+    .image-gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .image-gallery img {
+      width: 160px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 1rem;
+      transform: rotate(-5deg);
+      transition: transform 0.3s ease;
+    }
+
+    .image-gallery img:nth-child(even) {
+      transform: rotate(5deg);
+    }
+
+    .image-gallery img:hover {
+      transform: rotate(0deg) scale(1.05);
+      z-index: 1;
+    }
+
+    .btn-cta {
+      padding: 0.75rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 0.75rem;
+    }
+
+    @media (max-width: 576px) {
+      .training-section h1 {
+        font-size: 1.8rem;
+      }
+
+      .image-gallery img {
+        width: 120px;
+        height: 160px;
+      }
+    }
+    .progress-card {
+      background: white;
+      border-radius: 20px;
+      padding: 1.5rem;
+      color: black;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .profile-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .track-btn {
+      background-color: #4186f2;
+      color: white;
+      border-radius: 20px;
+      padding: 8px 20px;
+      text-decoration: none;
+    }
+    .track-btn:hover {
+      background-color: #336dd9;
+      color: white;
+    }
+    .metric-table td, .metric-table th {
+      font-size: 0.85rem;
+    }
+    .event-card {
+      border-radius: 1.5rem;
+      padding: 2rem;
+      text-align: center;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .event-card img {
+      max-width: 120px;
+      margin: 0 auto 1rem;
+    }
+    .event-date {
+      margin-top: auto;
+      font-weight: 500;
+    }
+    .bg-light-card {
+      background: white;
+      color: #003366;
+    }
+    .bg-purple-card {
+      background: #5b42d6;
+      color: white;
+    }
+    .bg-dark-card {
+      background: white;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="./assets/images/logo/Screenshot 2025-05-10 085120.png" alt="Fitness Fit Logo" height="80">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+
+
+         <ul class="navbar-nav me-auto ms-auto text-center">
+          <li class="nav-item"><a class="nav-link" href="home.html">HOME <i class="fas fa-home nav-icon"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="start.html">START <i class="fas fa-play nav-icon"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="train.html">TRAIN <i class="fas fa-dumbbell nav-icon"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="progress.html">PROGRESS <i class="fas fa-chart-line nav-icon"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="nutrition.html">NUTRITION <i class="fas fa-apple-alt nav-icon"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="plans.html">PLANS <i class="fas fa-running nav-icon"></i></a></li>
+        </ul>
+
+        <div class="d-flex">
+          <a href="#" class="btn join-btn">JOIN NOW</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  
+
+
+<div class="container my-5">
+  <div class="banner-container">
+    <div class="banner-overlay row align-items-center">
+      <div class="col-md-8 banner-text">
+        <h1>Your partner<br>in training</h1>
+        <p>Prepare for your next race with a training plan that delivers workouts, guidance and insights so you can reach your full potential.</p>
+      </div>
+      <div class="col-md-4 d-flex justify-content-md-end justify-content-center mt-4 mt-md-0">
+        <div class="qr-box">
+          <small class="text-uppercase fw-bold">Scan to</small>
+          <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://example.com&size=150x150" alt="QR Code" />
+          <div class="fw-semibold mt-2">Start Training</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <section class="training-section">
+    <div class="container">
+      <h1>Set your target and<br>let’s move on</h1>
+      <p>Create a detailed Training Plan for a range of distances between 5K and full marathon that are designed to work around your fitness level schedule.</p>
+
+      <div class="image-gallery">
+        <img src="assets/images/train/img2.jpg" alt="Runner 1">
+        <img src="assets/images/train/img3.jpg" alt="Runner 2">
+        <img src="assets/images/train/img4.jpg" alt="Runner 3">
+        <img src="assets/images/train/img5.jpg" alt="Runner 4">
+        <img src="assets/images/train/img6.jpg" alt="Runner 5">
+      </div>
+
+      <button class="btn btn-light btn-cta">Create Your Training Plan</button>
+    </div>
+  </section>
+
+   <div class="container py-5">
+    <div class="row align-items-center">
+      <!-- Left text -->
+      <div class="col-lg-7 mb-5 mb-lg-0">
+        <h1 class="display-4 fw-bold">Make progress with<br><span class="text-white">every step.</span></h1>
+        <p class="fs-5 mt-4">
+          We track your progress as you move through your Training Plan so you can look back on how you're performing.
+          That way you see where you're excelling and where you can improve.
+        </p>
+      </div>
+
+      <!-- Progress card -->
+      <div class="col-lg-5">
+        <div class="progress-card text-center">
+          <div class="d-flex align-items-center justify-content-center mb-3">
+            <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Profile" class="profile-img me-3">
+            <div class="text-start">
+              <h5 class="mb-0">mr_parkour</h5>
+              <small>As a Trainer</small>
+            </div>
+          </div>
+          <div class="row text-center border-top border-bottom py-2">
+            <div class="col">
+              <div class="fw-bold fs-4">1,784</div>
+              <small>Total (mi)</small>
+            </div>
+            <div class="col">
+              <div class="fw-bold fs-4">323</div>
+              <small>Activities</small>
+            </div>
+            <div class="col">
+              <div class="fw-bold fs-4">51</div>
+              <small>Friends</small>
+            </div>
+          </div>
+
+          <div class="mt-3">
+            <div class="d-flex justify-content-around fw-bold">
+              <span>Weekly</span>
+              <span>Monthly</span>
+              <span>Yearly</span>
+            </div>
+            <table class="table table-borderless mt-2 metric-table text-start">
+              <tbody>
+                <tr>
+                  <td>🔥 Kcal Burned</td>
+                  <td>(10,532)</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>⛰️ Elevation Climb</td>
+                  <td>(211)</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>⏱️ Time Spent</td>
+                  <td>(4:45)</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="text-center mt-3">
+              <a href="#" class="track-btn">Track Your Performance</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+   <div class="container py-5">
+    <!-- Section Header -->
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Put Your Training Plan In Motion</h2>
+      <p class="fs-5">
+        Explore and register for races near you within the Fitness Fit app to see all that training pay off.
+        Filter events based on your needs to find the ones that are right for you.
+      </p>
+    </div>
+
+    <!-- Event Cards -->
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="event-card bg-light-card">
+          <img src="assets/images/train/img7.png" alt="MICA Logo">
+          <div class="event-date">11/05/25 - 30/05/225</div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="event-card bg-purple-card">
+          <img src="./assets/images/train/img9.png" alt="Falmouth Race">
+          <div class="event-date">11/05/25 - 30/05/225</div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-4">
+        <div class="event-card bg-dark-card">
+          <img src="./assets/images/train/img8.png" alt="TCS Toronto Marathon">
+          <div class="event-date">11/05/25 - 30/05/225</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container-fluid">
+      <div class="row align-items-start">
+        <!-- Logo -->
+        <div class="col-md-3 text-center text-md-start footer-logo mb-4 mb-md-0">
+          <img src="assets/images/logo/footerlogo.png" alt="Fitness Fit Logo" />
+          <p class="mt-3 mb-0">&copy; 2025 Fitness Fit<br />All Rights Reserved.</p>
+        </div>
+
+        <!-- Menu Links -->
+        <div class="col-md-3">
+          <div class="row">
+            <div class="col-6">
+              <a href="#">HOME</a><br />
+              <a href="#">TRAIN</a><br />
+              <a href="#">PROGRESS</a><br />
+              <a href="#">PLANS</a>
+            </div>
+            <div class="col-6">
+              <a href="#">NUTRITION</a><br />
+              <a href="#">HELP</a><br />
+              <a href="#">Privacy Policy</a><br />
+              <a href="#">Cookie Policy</a>
+            </div>
+            <div class="col-12 mt-2">
+              <a href="#">Community Guidelines</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social & App -->
+        <div class="col-md-3 offset-md-1 text-center text-md-start">
+          <div class="footer-title">Follow Us On :</div>
+          <div class="social-icons mb-3">
+            <a href="#"><img src="assets/images/icon/instagram.png" height="30px" width="30px"></a>
+            <a href="#"><img src="assets/images/icon/communication.png" height="30px" width="30px"></a>
+            <a href="#"><img src="assets/images/icon/twitter.png" height="30px" width="30px"></a>
+            <a href="#"><img src="assets/images/icon/youtube.png" height="30px" width="30px"></a>
+          </div>
+        </div>
+
+        <div class="col-md-2">
+          <div class="app-section">
+            <div class="footer-title">GET THE APP</div>
+            <a href="#">
+              <img
+                src="./assets/images/logo/appstore.png"
+                class="store-badge"
+                alt="App Store"
+              />
+            </a>
+            <a href="#">
+              <img
+                src="./assets/images/logo/googleplay.png"
+                class="store-badge"
+                alt="Google Play"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+
+
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+
+
+    
+  
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const path = window.location.pathname;
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (path.includes(href)) {
+        link.classList.add('active-nav');
+        const iconSpan = link.querySelector('.icon-placeholder');
+
+        // Choose icon based on link
+        let iconHTML = '';
+        if (href.includes('home')) iconHTML = '<i class="fas fa-home ms-2"></i>';
+        else if (href.includes('start')) iconHTML = '<i class="fas fa-play ms-2"></i>';
+        else if (href.includes('train')) iconHTML = '<i class="fas fa-running ms-2"></i>';
+        else if (href.includes('progress')) iconHTML = '<i class="fas fa-chart-line ms-2"></i>';
+        else if (href.includes('nutrition')) iconHTML = '<i class="fas fa-apple-alt ms-2"></i>';
+        else if (href.includes('plans')) iconHTML = '<i class="fas fa-calendar-alt ms-2"></i>';
+
+        iconSpan.innerHTML = iconHTML;
+      }
+    });
+  });
+</script>
+
+
+</body>
+</html>

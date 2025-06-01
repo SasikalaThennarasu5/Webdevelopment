@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Step Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&
+family=Noto+Sans+JP:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght
+@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,
+600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Shafarik&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="home.css">
+
+    <link rel="stylesheet" href="footer.css">
+    <style>
+
+        html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  /* Full viewport height linear gradient */
+  background: linear-gradient(to bottom, #324361, #3869b8, #3a81f5, #3c83f7);
+  background-attachment: fixed;  /* keeps background fixed during scroll */
+  background-repeat: no-repeat;
+  background-size: cover; /* ensures gradient fills full body */
+}
+
+    .navbar-custom {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+ padding: 25px 20px;
+}
+
+
+
+    .nav-link {
+      color: white !important;
+      font-weight: 600;
+      font-size: 0.8rem;
+      margin: 0 15px;
+      position: relative;
+      padding-bottom: 5px;
+    }
+
+    .nav-link .nav-icon {
+      display: none;
+      margin-left: 5px;
+    }
+
+    .nav-link.active {
+      border-bottom: 2px solid white;
+    }
+
+    .nav-link.active .nav-icon {
+      display: inline-block;
+    }
+
+    
+
+    .join-btn {
+      background: white;
+      color: black;
+      font-weight: bold;
+      padding: 12px 30px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      transition: background 0.3s ease;
+    }
+
+    .join-btn:hover {
+      background: #f0f0f0;
+    }
+
+    .navbar-brand img {
+      height: 70px;
+    }
+
+    .navbar-toggler {
+      border: none;
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    @media (max-width: 768px) {
+      .join-btn {
+        margin-top: 10px;
+        width: 100%;
+      }
+    }
+
+
+        .chart-card {
+            background: linear-gradient(to bottom, #337df0, #b76b85);
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .dropdown-toggle {
+            background-color: #000;
+            border: none;
+            border-radius: 12px;
+            padding: 0.4rem 1rem;
+            color: white;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+            width: 100%;
+        }
+
+        canvas {
+            width: 100% !important;
+            height: auto !important;
+        }
+
+        @media (max-width: 576px) {
+            .chart-container {
+                height: 200px;
+            }
+        }
+
+        .stats-section {
+            padding: 2rem 0;
+        }
+
+        .stat-block {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .stat-block h5 {
+            font-weight: bold;
+        }
+
+        .stat-block .value {
+            font-size: 1.8rem;
+            margin: 0.5rem 0;
+        }
+
+        .stat-block .month {
+            font-size: 1.1rem;
+            color: #f1f1f1;
+        }
+
+        @media (max-width: 576px) {
+            .stat-block .value {
+                font-size: 1.5rem;
+            }
+        }
+
+        .card-custom {
+            border-radius: 1rem;
+            background-color: white;
+            color: #000;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            height: 100%;
+        }
+
+        .red-circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: #e53935;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .red-circle img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .card-title {
+            font-weight: 600;
+            margin-left: 1rem;
+            margin-bottom: 0;
+        }
+
+        .arrow-button {
+            border: 2px solid black;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .value {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        .label {
+            font-weight: 500;
+        }
+
+        @media (max-width: 576px) {
+            .flex-sm-column {
+                flex-direction: column !important;
+            }
+
+            .card-title {
+                margin-left: 0;
+                margin-top: 0.5rem;
+            }
+        }
+
+        .activity-card {
+            background: white;
+            font-weight: bold;
+            color: #000;
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            height: 100%;
+        }
+
+        .red-circle {
+            background: #e53935;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 1rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .red-circle img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .progress-label {
+            font-weight: 600;
+        }
+
+        .progress {
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            background: #e0e0e0;
+        }
+
+        .progress-bar-green {
+            background-color: #4caf50;
+        }
+
+        .bottom-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .badge-days-left {
+            background-color: #d46b6b;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 1rem;
+            font-size: 0.85rem;
+        }
+
+        .activity-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .activity-subtitle {
+            font-size: 0.95rem;
+            color: #444;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 576px) {
+            .bottom-info {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+   <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="./assets/images/logo/Screenshot 2025-05-10 085120.png" alt="Fitness Fit Logo" height="80">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+
+
+         <ul class="navbar-nav me-auto ms-auto text-center">
+          <li class="nav-item"><a class="nav-link" href="home.html">HOME <i class="fas fa-home nav-icon"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="start.html">START <i class="fas fa-play nav-icon"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="train.html">TRAIN <i class="fas fa-dumbbell nav-icon"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="progress.html">PROGRESS <i class="fas fa-chart-line nav-icon"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="nutrition.html">NUTRITION <i class="fas fa-apple-alt nav-icon"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="plans.html">PLANS <i class="fas fa-running nav-icon"></i></a></li>
+        </ul>
+
+        <div class="d-flex">
+          <a href="#" class="btn join-btn">JOIN NOW</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+
+
+    <div class="container">
+        <div class="chart-card">
+            <div class="chart-header mb-4">
+                <h5 class="fw-bold">Overview</h5>
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Monthly
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Weekly</a></li>
+                        <li><a class="dropdown-item" href="#">Monthly</a></li>
+                        <li><a class="dropdown-item" href="#">Yearly</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="chart-container">
+                <canvas id="stepChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('stepChart').getContext('2d');
+
+        const stepChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'July', 'Aug', 'Sep'],
+                datasets: [{
+                    label: 'Steps',
+                    data: [4000, 6500, 5000, 9178, 6000, 7200, 5800, 9800, 7300],
+                    fill: false,
+                    borderColor: '#ffffff',
+                    borderWidth: 3,
+                    pointBackgroundColor: function (context) {
+                        return context.dataIndex === 3 ? '#ff3b58' : '#ffffff';
+                    },
+                    pointBorderColor: '#00bfff',
+                    pointBorderWidth: 3,
+                    pointRadius: function (context) {
+                        return context.dataIndex === 3 ? 10 : 5;
+                    },
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: {
+                        enabled: true,
+                        backgroundColor: '#20232a',
+                        titleColor: '#ffffff',
+                        bodyColor: '#ffffff',
+                        titleFont: { weight: 'bold' },
+                        callbacks: {
+                            label: (context) => `${context.formattedValue} Steps`
+                        }
+                    },
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            color: '#ffffff',
+                            font: { weight: 'bold' }
+                        },
+                        grid: {
+                            display: false
+                        }
+                    },
+                    y: {
+                        display: false,
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+
+
+    <section class="stats-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4 col-sm-12 stat-block">
+                    <h5>Total Time :</h5>
+                    <div class="value">748 Hr</div>
+                    <div class="month">March</div>
+                </div>
+                <div class="col-md-4 col-sm-12 stat-block">
+                    <h5>Total Steps :</h5>
+                    <div class="value">9.128 st</div>
+                    <div class="month">March</div>
+                </div>
+                <div class="col-md-4 col-sm-12 stat-block">
+                    <h5>Target :</h5>
+                    <div class="value">9.200 st</div>
+                    <div class="month">March</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="row g-4 justify-content-center">
+
+            <!-- Daily Jogging Card -->
+            <div class="col-md-4 col-sm-10">
+                <div class="card-custom d-flex align-items-center">
+                    <div class="red-circle">
+                        <img src="https://img.icons8.com/ios-filled/50/ffffff/sneakers.png" alt="shoe" />
+                    </div>
+                    <h5 class="card-title">Daily Jogging</h5>
+                </div>
+            </div>
+
+            <!-- My Jogging Details Card -->
+            <div class="col-md-6 col-sm-10">
+                <div class="card-custom">
+                    <div class="d-flex align-items-center flex-sm-column flex-md-row mb-3">
+                        <div class="red-circle">
+                            <img src="https://img.icons8.com/ios-filled/50/ffffff/running.png" alt="runner" />
+                        </div>
+                        <h5 class="card-title">My Jogging</h5>
+                    </div>
+                    <p class="label">Total Time</p>
+                    <p class="value">748 Hr</p>
+                    <p class="label">March</p>
+                    <div class="mt-4 d-flex justify-content-end">
+                        <div class="arrow-button">
+                            &rarr;
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+<br><br><br>
+    <div class="container">
+        <div class="row g-4 justify-content-center">
+
+            <!-- Card 1 -->
+            <div class="col-md-4 col-sm-10">
+                <div class="activity-card">
+                    <div class="red-circle">
+                        <img src="https://img.icons8.com/ios-filled/50/ffffff/bicycle.png" alt="Bicycle" />
+                    </div>
+                    <div class="activity-title">Bicycle Drill</div>
+                    <div class="activity-subtitle">36 km/ Week</div>
+                    <div class="d-flex justify-content-between progress-label">
+                        <span>Progress</span>
+                        <span>45%</span>
+                    </div>
+                    <div class="progress mb-2">
+                        <div class="progress-bar progress-bar-green" style="width: 45%;"></div>
+                    </div>
+                    <div class="bottom-info">
+                        <span>17/ 30km</span>
+                        <span class="badge-days-left">2 Days Left</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-md-4 col-sm-10">
+                <div class="activity-card">
+                    <div class="red-circle">
+                        <img src="https://img.icons8.com/ios-filled/50/ffffff/sneakers.png" alt="Jogging" />
+                    </div>
+                    <div class="activity-title">Jogging Hero</div>
+                    <div class="activity-subtitle">12 km/ Month</div>
+                    <div class="d-flex justify-content-between progress-label">
+                        <span>Progress</span>
+                        <span>13%</span>
+                    </div>
+                    <div class="progress mb-2">
+                        <div class="progress-bar progress-bar-green" style="width: 13%;"></div>
+                    </div>
+                    <div class="bottom-info">
+                        <span>3/ 12km</span>
+                        <span class="badge-days-left">9 Days Left</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-md-4 col-sm-10">
+                <div class="activity-card">
+                    <div class="red-circle">
+                        <img src="https://img.icons8.com/ios-filled/50/ffffff/running.png" alt="Running" />
+                    </div>
+                    <div class="activity-title">Healthy Busy</div>
+                    <div class="activity-subtitle">3600 Steps/ Weeks</div>
+                    <div class="d-flex justify-content-between progress-label">
+                        <span>Progress</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="progress mb-2">
+                        <div class="progress-bar progress-bar-green" style="width: 90%;"></div>
+                    </div>
+                    <div class="bottom-info">
+                        <span>3200/ 3600 St</span>
+                        <span class="badge-days-left">2 Days Left</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+<!-- Footer -->
+  <footer class="footer">
+    <div class="container-fluid">
+      <div class="row align-items-start">
+        <!-- Logo -->
+        <div class="col-md-3 text-center text-md-start footer-logo mb-4 mb-md-0">
+          <img src="assets/images/logo/footerlogo.png" alt="Fitness Fit Logo" />
+          <p class="mt-3 mb-0">&copy; 2025 Fitness Fit<br />All Rights Reserved.</p>
+        </div>
+
+        <!-- Menu Links -->
+        <div class="col-md-3">
+          <div class="row">
+            <div class="col-6">
+              <a href="#">HOME</a><br />
+              <a href="#">TRAIN</a><br />
+              <a href="#">PROGRESS</a><br />
+              <a href="#">PLANS</a>
+            </div>
+            <div class="col-6">
+              <a href="#">NUTRITION</a><br />
+              <a href="#">HELP</a><br />
+              <a href="#">Privacy Policy</a><br />
+              <a href="#">Cookie Policy</a>
+            </div>
+            <div class="col-12 mt-2">
+              <a href="#">Community Guidelines</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social & App -->
+        <div class="col-md-3 offset-md-1 text-center text-md-start">
+          <div class="footer-title">Follow Us On :</div>
+          <div class="social-icons mb-3">
+            <a href="#"><img src="assets/images/icon/instagram.png" height="30px" width="30px"></a>
+            <a href="#"><img src="assets/images/icon/communication.png" height="30px" width="30px"></a>
+            <a href="#"><img src="assets/images/icon/twitter.png" height="30px" width="30px"></a>
+            <a href="#"><img src="assets/images/icon/youtube.png" height="30px" width="30px"></a>
+          </div>
+        </div>
+
+        <div class="col-md-2">
+          <div class="app-section">
+            <div class="footer-title">GET THE APP</div>
+            <a href="#">
+              <img
+                src="./assets/images/logo/appstore.png"
+                class="store-badge"
+                alt="App Store"
+              />
+            </a>
+            <a href="#">
+              <img
+                src="./assets/images/logo/googleplay.png"
+                class="store-badge"
+                alt="Google Play"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const path = window.location.pathname;
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (path.includes(href)) {
+        link.classList.add('active-nav');
+        const iconSpan = link.querySelector('.icon-placeholder');
+
+        // Choose icon based on link
+        let iconHTML = '';
+        if (href.includes('home')) iconHTML = '<i class="fas fa-home ms-2"></i>';
+        else if (href.includes('start')) iconHTML = '<i class="fas fa-play ms-2"></i>';
+        else if (href.includes('train')) iconHTML = '<i class="fas fa-running ms-2"></i>';
+        else if (href.includes('progress')) iconHTML = '<i class="fas fa-chart-line ms-2"></i>';
+        else if (href.includes('nutrition')) iconHTML = '<i class="fas fa-apple-alt ms-2"></i>';
+        else if (href.includes('plans')) iconHTML = '<i class="fas fa-calendar-alt ms-2"></i>';
+
+        iconSpan.innerHTML = iconHTML;
+      }
+    });
+  });
+
+
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+
+
+</script>
+
+
+</body>
+
+</html>

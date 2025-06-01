@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&
+family=Noto+Sans+JP:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght
+@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,
+600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Shafarik&display=swap"
+ rel="stylesheet">
+  <title>Nutrition Diet Hero</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="footer.css">
+  <style>
+
+    html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  /* Full viewport height linear gradient */
+  background: linear-gradient(to bottom, #324361, #3869b8, #3a81f5, #3c83f7);
+  background-attachment: fixed;  /* keeps background fixed during scroll */
+  background-repeat: no-repeat;
+  background-size: cover; /* ensures gradient fills full body */
+}
+    .navbar-custom {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+ padding: 25px 20px;
+}
+
+
+
+    .nav-link {
+      color: white !important;
+      font-weight: 600;
+      font-size: 0.8rem;
+      margin: 0 15px;
+      position: relative;
+      padding-bottom: 5px;
+    }
+
+    .nav-link .nav-icon {
+      display: none;
+      margin-left: 5px;
+    }
+
+    .nav-link.active {
+      border-bottom: 2px solid white;
+    }
+
+    .nav-link.active .nav-icon {
+      display: inline-block;
+    }
+
+    
+
+    .join-btn {
+      background: white;
+      color: black;
+      font-weight: bold;
+      padding: 12px 30px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      transition: background 0.3s ease;
+    }
+
+    .join-btn:hover {
+      background: #f0f0f0;
+    }
+
+    .navbar-brand img {
+      height: 70px;
+    }
+
+    .navbar-toggler {
+      border: none;
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    @media (max-width: 768px) {
+      .join-btn {
+        margin-top: 10px;
+        width: 100%;
+      }
+    }
+
+    
+    
+
+    .hero-section {
+      max-width: 1200px;
+      margin: 50px auto;
+      border-radius: 40px;
+      overflow: hidden;
+      position: relative;
+      height: 400px;
+    }
+
+    .hero-background {
+      background: url('./assets/images/nutrients/pexels-edwardeyer-1049626.jpg') no-repeat center center;
+      background-size: cover;
+      height: 100%;
+      width: 100%;
+      position: relative;
+    }
+
+    .hero-overlay {
+      background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for text contrast */
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-text {
+      color: white;
+      font-size: 3rem;
+      font-weight: bold;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-text {
+        font-size: 2rem;
+      }
+
+      .hero-section {
+        height: 250px;
+        border-radius: 25px;
+      }
+    }
+.nutrition-section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .nutrition-section h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 40px;
+    }
+
+    .nutrition-card {
+      border-radius: 20px;
+      color: #000;
+      padding: 30px 20px;
+      height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .nutrition-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .nutrition-card .icon {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 1.5rem;
+    }
+
+    .card-title {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .card-text {
+      margin-top: auto;
+      font-size: 1rem;
+    }
+
+    .bg-calories { background-color: #e74c3c; }   /* Red */
+    .bg-protein  { background-color: #bdfc2c; }   /* Lime Green */
+    .bg-water    { background-color: #4dd0e1; }   /* Aqua */
+    .bg-fat      { background-color: #fbc02d; }   /* Yellow */
+
+    @media (max-width: 767.98px) {
+      .nutrition-card {
+        margin-bottom: 20px;
+      }
+    }
+    .meal-column {
+        color: #000;
+      background-color: #fff;
+      border-radius: 30px;
+      overflow: hidden;
+      padding: 10px;
+      margin: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .meal-header {
+      background-color: #42a5f5;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      font-weight: bold;
+      font-size: 1.3rem;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      border: 3px solid white;
+    }
+
+    .meal-item {
+      border-bottom: 1px solid #ccc;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+    }
+
+    .meal-item:last-child {
+      border-bottom: none;
+    }
+
+    .meal-image {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 15px;
+    }
+
+    .meal-info {
+      flex-grow: 1;
+    }
+
+    .meal-info h6 {
+      margin: 0;
+      font-weight: bold;
+    }
+
+    .meal-info small {
+      display: block;
+      color: #555;
+    }
+
+    .done-btn {
+      background-color: #08c858;
+      color: #fff;
+      font-size: 0.85rem;
+      padding: 4px 10px;
+      border-radius: 12px;
+      margin-top: 6px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .done-btn i {
+      margin-right: 5px;
+    }
+
+    @media (max-width: 767.98px) {
+      .meal-item {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .meal-image {
+        margin-bottom: 10px;
+      }
+    }
+    .stat {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .stat h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    .stat-line {
+      height: 2px;
+      width: 60%;
+      background-color: white;
+      margin: 0 auto;
+      opacity: 0.3;
+    }
+    .food-grid {
+      background-color: white;
+      border-radius: 20px;
+      padding: 1rem;
+      color: black;
+      margin-top: 2rem;
+    }
+    .food-item {
+      text-align: center;
+      padding: 1rem;
+      border-right: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+    }
+    .food-item:nth-child(3n) {
+      border-right: none;
+    }
+    .food-item:nth-child(n+4) {
+      border-bottom: none;
+    }
+    .food-item img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 0.5rem;
+    }
+    @media (max-width: 767px) {
+      .food-item {
+        border: none !important;
+        border-bottom: 1px solid #ccc !important;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+   <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="./assets/images/logo/Screenshot 2025-05-10 085120.png" alt="Fitness Fit Logo" height="80">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+
+
+         <ul class="navbar-nav me-auto ms-auto text-center">
+          <li class="nav-item"><a class="nav-link" href="home.html">HOME <i class="fas fa-home nav-icon"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="start.html">START <i class="fas fa-play nav-icon"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="train.html">TRAIN <i class="fas fa-dumbbell nav-icon"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="progress.html">PROGRESS <i class="fas fa-chart-line nav-icon"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="nutrition.html">NUTRITION <i class="fas fa-apple-alt nav-icon"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="plans.html">PLANS <i class="fas fa-running nav-icon"></i></a></li>
+        </ul>
+
+        <div class="d-flex">
+          <a href="#" class="btn join-btn">JOIN NOW</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+
+
+
+  <div class="hero-section">
+    <div class="hero-background">
+      <div class="hero-overlay">
+        <div class="hero-text">Nutrition Diet</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<section class="nutrition-section">
+    <h2>Complete Daily Nutrition</h2>
+    <div class="container">
+      <div class="row g-4 justify-content-center">
+
+        <!-- Calories -->
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="nutrition-card bg-calories">
+            <div class="card-title">Kalori <i class="bi bi-fire icon"></i></div>
+            <div class="card-text">Total Cons<br>832 kcal</div>
+          </div>
+        </div>
+
+        <!-- Protein -->
+        <div class="col-12 col-sm-6 col-md-3">
+  <div class="nutrition-card bg-protein">
+    <div class="card-title">Protein <i class="bi bi-leaf-fill icon"></i></div>
+    <div class="card-text">Total Cons<br>235 gm</div>
+  </div>
+</div>
+
+        <!-- Water -->
+
+        
+
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="nutrition-card bg-water">
+            <div class="card-title">Water <i class="bi bi-droplet icon"></i></div>
+            <div class="card-text">Total Cons<br>832 kcal</div>
+          </div>
+        </div>
+
+        <!-- Fat -->
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="nutrition-card bg-fat">
+            <div class="card-title">Fat <i class="bi bi-egg-fried"></i></div>
+            <div class="card-text">Total Cons<br>-132 kcal</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+  <div class="row justify-content-center">
+
+    <!-- Breakfast -->
+    <div class="col-12 col-md-4">
+      <div class="meal-column">
+        <div class="meal-header">Breakfast</div>
+
+        <div class="meal-item">
+          <img src="assets/images/nutrients/img1.jpg" class="meal-image" alt="Egg Food" />
+          <div class="meal-info">
+            <h6>Egg Food</h6>
+            <small>234 kcal</small>
+            <small>“Fresh and Low Calorie”</small>
+            <div class="done-btn"><i class="bi bi-check2-circle"></i> Done</div>
+          </div>
+        </div>
+
+        <div class="meal-item">
+          <img src="assets/images/nutrients/img2.jpg" class="meal-image" alt="Yogurt" />
+          <div class="meal-info">
+            <h6>Yogurt</h6>
+            <small>234 kcal</small>
+            <small>“Fresh and Low Calorie”</small>
+            <div class="done-btn"><i class="bi bi-check2-circle"></i> Done</div>
+          </div>
+        </div>
+
+        <div class="meal-item">
+          <img src="assets/images/nutrients/img3.jpg" class="meal-image" alt="Oat Meal" />
+          <div class="meal-info">
+            <h6>Oat Meal</h6>
+            <small>234 kcal</small>
+            <small>“Fresh and Low Calorie”</small>
+            <div class="done-btn"><i class="bi bi-check2-circle"></i> Done</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lunch -->
+    <div class="col-12 col-md-4">
+      <div class="meal-column">
+        <div class="meal-header">Lunch</div>
+
+        <div class="meal-item">
+          <img src="assets/images/nutrients/img4.jpg" class="meal-image" alt="Turkey Salad" />
+          <div class="meal-info">
+            <h6>Turkey Salad</h6>
+            <small>234 kcal</small>
+            <small>“Fresh and Low Calorie”</small>
+            <div class="done-btn"><i class="bi bi-check2-circle"></i> Done</div>
+          </div>
+        </div>
+
+        <div class="meal-item">
+          <img src="assets/images/nutrients/img5.jpg" class="meal-image" alt="Lentil Soup" />
+          <div class="meal-info">
+            <h6>Lentil Soup</h6>
+            <small>234 kcal</small>
+            <small>“Fresh and Low Calorie”</small>
+            <div class="done-btn"><i class="bi bi-check2-circle"></i> Done</div>
+          </div>
+        </div>
+
+        <div class="meal-item">
+          <img src="assets/images/nutrients/img6.jpg" class="meal-image" alt="Egg Sandwich" />
+          <div class="meal-info">
+            <h6>Egg Sandwich</h6>
+            <small>234 kcal</small>
+            <small>“Fresh and Low Calorie”</small>
+            <div class="done-btn"><i class="bi bi-check2-circle"></i> Done</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dinner -->
+    <div class="col-12 col-md-4">
+      <div class="meal-column">
+        <div class="meal-header">Dinner</div>
+
+        <div class="meal-item">
+          <img src="assets/images/nutrients/img7.jpg" class="meal-image" alt="Chicken Rice" />
+          <div class="meal-info">
+            <h6>Chicken Rice</h6>
+            <small>234 kcal</small>
+            <small>“Fresh and Low Calorie”</small>
+            <div class="done-btn"><i class="bi bi-check2-circle"></i> Done</div>
+          </div>
+        </div>
+
+        <div class="meal-item">
+          <img src="assets/images/nutrients/img8.jpg" class="meal-image" alt="Chickpeas" />
+          <div class="meal-info">
+            <h6>Chickpeas</h6>
+            <small>234 kcal</small>
+            <small>“Fresh and Low Calorie”</small>
+            <div class="done-btn"><i class="bi bi-check2-circle"></i> Done</div>
+          </div>
+        </div>
+
+        <div class="meal-item">
+          <img src="assets/images/nutrients/img9.jpg" class="meal-image" alt="Sweet Potato" />
+          <div class="meal-info">
+            <h6>Sweet Potato</h6>
+            <small>234 kcal</small>
+            <small>“Fresh and Low Calorie”</small>
+            <div class="done-btn"><i class="bi bi-check2-circle"></i> Done</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="container text-center">
+    <h1>Mix Salad Vegetables</h1>
+
+    <div class="row mt-4 text-white">
+      <div class="col-md-4 stat">
+        <h2>240 Calories</h2>
+        <div class="stat-line"></div>
+      </div>
+      <div class="col-md-4 stat">
+        <h2>19gr Protein</h2>
+        <div class="stat-line"></div>
+      </div>
+      <div class="col-md-4 stat">
+        <h2>5gr Carbs</h2>
+        <div class="stat-line"></div>
+      </div>
+    </div>
+
+    <div class="row food-grid mt-4">
+      <div class="col-12 col-sm-6 col-md-4 food-item">
+        <img src="assets/images/nutrients/img10.jpg" alt="Shrimp" />
+        <h5>Shrimp</h5>
+        <p>"A bit of shrimp and a lot of glamour."</p>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 food-item">
+        <img src="assets/images/nutrients/img11.jpg" alt="Kale" />
+        <h5>Kale</h5>
+        <p>“Nutrition superstar due to amounts of vitamins it contains”</p>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 food-item">
+        <img src="assets/images/nutrients/img12.jpg" alt="Curd" />
+        <h5>Curd</h5>
+        <p>“Delicious food is the best kind of therapy.”</p>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 food-item">
+        <img src="assets/images/nutrients/img13.jpg" alt="Strawberry" />
+        <h5>Strawberry</h5>
+        <p>Life is berry sweet when you have strawberries!</p>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 food-item">
+        <img src="assets/images/nutrients/img14.jpg" alt="Corn" />
+        <h5>Corn</h5>
+        <p>“Life is sweeter with corn on the cob”</p>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 food-item">
+        <img src="assets/images/nutrients/img15.jpg" alt="Ghee" />
+        <h5>Ghee</h5>
+        <p>What ghee can do for you, even your mother and father can't!</p>
+      </div>
+    </div>
+  </div>
+
+<!-- Footer -->
+  <footer class="footer">
+    <div class="container-fluid">
+      <div class="row align-items-start">
+        <!-- Logo -->
+        <div class="col-md-3 text-center text-md-start footer-logo mb-4 mb-md-0">
+          <img src="assets/images/logo/footerlogo.png" alt="Fitness Fit Logo" />
+          <p class="mt-3 mb-0">&copy; 2025 Fitness Fit<br />All Rights Reserved.</p>
+        </div>
+
+        <!-- Menu Links -->
+        <div class="col-md-3">
+          <div class="row">
+            <div class="col-6">
+              <a href="#">HOME</a><br />
+              <a href="#">TRAIN</a><br />
+              <a href="#">PROGRESS</a><br />
+              <a href="#">PLANS</a>
+            </div>
+            <div class="col-6">
+              <a href="#">NUTRITION</a><br />
+              <a href="#">HELP</a><br />
+              <a href="#">Privacy Policy</a><br />
+              <a href="#">Cookie Policy</a>
+            </div>
+            <div class="col-12 mt-2">
+              <a href="#">Community Guidelines</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social & App -->
+        <div class="col-md-3 offset-md-1 text-center text-md-start">
+          <div class="footer-title">Follow Us On :</div>
+          <div class="social-icons mb-3">
+            <a href="#"><img src="assets/images/icon/instagram.png" height="30px" width="30px"></a>
+            <a href="#"><img src="assets/images/icon/communication.png" height="30px" width="30px"></a>
+            <a href="#"><img src="assets/images/icon/twitter.png" height="30px" width="30px"></a>
+            <a href="#"><img src="assets/images/icon/youtube.png" height="30px" width="30px"></a>
+          </div>
+        </div>
+
+        <div class="col-md-2">
+          <div class="app-section">
+            <div class="footer-title">GET THE APP</div>
+            <a href="#">
+              <img
+                src="./assets/images/logo/appstore.png"
+                class="store-badge"
+                alt="App Store"
+              />
+            </a>
+            <a href="#">
+              <img
+                src="./assets/images/logo/googleplay.png"
+                class="store-badge"
+                alt="Google Play"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script>
+  
+
+
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    const path = window.location.pathname;
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (path.includes(href)) {
+        link.classList.add('active-nav');
+        const iconSpan = link.querySelector('.icon-placeholder');
+
+        // Choose icon based on link
+        let iconHTML = '';
+        if (href.includes('home')) iconHTML = '<i class="fas fa-home ms-2"></i>';
+        else if (href.includes('start')) iconHTML = '<i class="fas fa-play ms-2"></i>';
+        else if (href.includes('train')) iconHTML = '<i class="fas fa-running ms-2"></i>';
+        else if (href.includes('progress')) iconHTML = '<i class="fas fa-chart-line ms-2"></i>';
+        else if (href.includes('nutrition')) iconHTML = '<i class="fas fa-apple-alt ms-2"></i>';
+        else if (href.includes('plans')) iconHTML = '<i class="fas fa-calendar-alt ms-2"></i>';
+
+        iconSpan.innerHTML = iconHTML;
+      }
+    });
+  });
+
+
+
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  
+
+</script>
+
+
+</body>
+</html>

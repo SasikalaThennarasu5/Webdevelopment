@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fitness Fit Home</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="home.css">
+
+  <link rel="stylesheet" href="footer.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="./assets/images/logo/Screenshot 2025-05-10 085120.png" alt="Fitness Fit Logo" height="80">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+
+
+         <ul class="navbar-nav me-auto ms-auto text-center">
+          <li class="nav-item"><a class="nav-link" href="home.html">HOME <i class="fas fa-home nav-icon"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="start.html">START <i class="fas fa-play nav-icon"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="train.html">TRAIN <i class="fas fa-dumbbell nav-icon"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="progress.html">PROGRESS <i class="fas fa-chart-line nav-icon"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="nutrition.html">NUTRITION <i class="fas fa-apple-alt nav-icon"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="plans.html">PLANS <i class="fas fa-running nav-icon"></i></a></li>
+        </ul>
+
+        <div class="d-flex">
+          <a href="#" class="btn join-btn">JOIN NOW</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  
+
+ <!-- Hero Section -->
+  <section class="hero-wrapper py-5 px-3 d-flex justify-content-center align-items-center">
+    <div class="hero-box p-4 p-lg-5 rounded-4 shadow-lg" style="max-width: 1200px; width: 100%;">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6 text-white">
+          <h1 class="display-5 fw-bold text-dark">Let’s Start<br>running together</h1>
+          <p class="lead text-dark">
+            Find guidance, support, and a community excited to celebrate your milestones.
+          </p>
+          <div class="qr-box p-3 mt-4 rounded-4 border border-2 border-dark bg-light d-inline-block">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://example.com&size=150x150" alt="QR Code" width="100" class="mb-2"/>
+            <div class="text-center text-dark">
+              <span class="text-uppercase small text-muted">Scan to</span><br>
+              <strong>Download the App</strong>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 d-none d-lg-block">
+          <!-- The background image is handled via CSS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <section class="hero-section text-white text-center d-flex flex-column justify-content-center align-items-center px-3">
+    <h1 class="display-5 fw-bold">Motivation <span class="text-nowrap">for every step of</span><br/>your journey.</h1>
+    <p class="lead mt-3 mb-5">Stay on track with the support of Fitness Fit Coaches. Through Guided Workouts for every runner, <br class="d-none d-md-block"/> you’ll find that boost to get started and the inspiration you need for that extra mile.</p>
+
+    <div class="row w-100 justify-content-center">
+      <!-- Card 1 -->
+      <div class="col-md-5 col-12 mb-4">
+        <div class="bg-light text-dark p-4 rounded shadow position-relative">
+          <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Coach Helan" class="rounded-circle position-absolute top-0 start-0 translate-middle-y ms-3 mt-3" width="80" height="80">
+          <p class="fw-semibold">Quote By Helan,</p>
+          <p class="fs-5">“Running isn’t always pretty, but its capability to change your life is incredible!”</p>
+          <div class="workout-box d-flex align-items-center justify-content-between px-3 py-2 rounded">
+            <div>
+              <div class="badge bg-primary mb-1">GUIDED WORKOUT</div>
+              <div><em>I AM A RUNNER !</em></div>
+              <small>30mins . All Levels</small>
+            </div>
+            <button class="btn btn-primary rounded-circle play-button" onclick="playWorkout()">
+              ▶
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-5 col-12 mb-4">
+        <div class="bg-light text-dark p-4 rounded shadow position-relative">
+          <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Coach Alex" class="rounded-circle position-absolute top-0 start-0 translate-middle-y ms-3 mt-3" width="80" height="80">
+          <p class="fw-semibold">Quote By Alex,</p>
+          <p class="fs-5">“Running isn’t always pretty, but its capability to change your life is incredible!”</p>
+          <div class="workout-box d-flex align-items-center justify-content-between px-3 py-2 rounded">
+            <div>
+              <div class="badge bg-primary mb-1">GUIDED WORKOUT</div>
+              <div><em>I AM A RUNNER !</em></div>
+              <small>30mins . All Levels</small>
+            </div>
+            <button class="btn btn-primary rounded-circle play-button" onclick="playWorkout()">
+              ▶
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="challenge-section text-white text-center py-5">
+  <div class="container">
+    <h2 class="display-6 fw-bold">Embrace The Challenge</h2>
+    <p class="lead mt-3 mb-5">
+      Find the inspiration to go even further by making our monthly<br class="d-none d-md-block"/>
+      Fitness Fit Challenges part of your running routine and inviting your<br class="d-none d-md-block"/>
+      friends to join in on the fun.
+    </p>
+
+    <div class="row justify-content-center align-items-center">
+      <!-- Left Image -->
+      <div class="col-md-4 mb-4">
+        <img src="./assets/images/start/img1.jpg" alt="Group Running" class="img-fluid rounded shadow rotate-left">
+      </div>
+
+      <!-- Center Button -->
+      <div class="col-md-2 mb-4 d-flex justify-content-center">
+        <button class="btn btn-light btn-lg fw-semibold">Join A Challenge</button>
+      </div>
+
+      <!-- Right Image -->
+      <div class="col-md-4 mb-4">
+        <img src="./assets/images/start/img2.jpg" alt="Older Runners" class="img-fluid rounded shadow rotate-right">
+      </div>
+    </div>
+
+    <!-- Extra card-like image at bottom (optional) -->
+    <div class="mt-5">
+      <img src="./assets/images/start/img3.jpg" alt="Running App Promo" class="img-fluid rounded" style="max-width: 300px;">
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+  <footer class="footer">
+    <div class="container-fluid">
+      <div class="row align-items-start">
+        <!-- Logo -->
+        <div class="col-md-3 text-center text-md-start footer-logo mb-4 mb-md-0">
+          <img src="assets/images/logo/footerlogo.png" alt="Fitness Fit Logo" />
+          <p class="mt-3 mb-0">&copy; 2025 Fitness Fit<br />All Rights Reserved.</p>
+        </div>
+
+        <!-- Menu Links -->
+        <div class="col-md-3">
+          <div class="row">
+            <div class="col-6">
+              <a href="#">HOME</a><br />
+              <a href="#">TRAIN</a><br />
+              <a href="#">PROGRESS</a><br />
+              <a href="#">PLANS</a>
+            </div>
+            <div class="col-6">
+              <a href="#">NUTRITION</a><br />
+              <a href="#">HELP</a><br />
+              <a href="#">Privacy Policy</a><br />
+              <a href="#">Cookie Policy</a>
+            </div>
+            <div class="col-12 mt-2">
+              <a href="#">Community Guidelines</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social & App -->
+        <div class="col-md-3 offset-md-1 text-center text-md-start">
+          <div class="footer-title">Follow Us On :</div>
+          <div class="social-icons mb-3">
+            <a href="#"><img src="assets/images/icon/instagram.png" height="30px" width="30px"></a>
+            <a href="#"><img src="assets/images/icon/communication.png" height="30px" width="30px"></a>
+            <a href="#"><img src="assets/images/icon/twitter.png" height="30px" width="30px"></a>
+            <a href="#"><img src="assets/images/icon/youtube.png" height="30px" width="30px"></a>
+          </div>
+        </div>
+
+        <div class="col-md-2">
+          <div class="app-section">
+            <div class="footer-title">GET THE APP</div>
+            <a href="#">
+              <img
+                src="./assets/images/logo/appstore.png"
+                class="store-badge"
+                alt="App Store"
+              />
+            </a>
+            <a href="#">
+              <img
+                src="./assets/images/logo/googleplay.png"
+                class="store-badge"
+                alt="Google Play"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function playWorkout() {
+  alert("Workout started!");
+}
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const path = window.location.pathname;
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (path.includes(href)) {
+        link.classList.add('active-nav');
+        const iconSpan = link.querySelector('.icon-placeholder');
+
+        // Choose icon based on link
+        let iconHTML = '';
+        if (href.includes('home')) iconHTML = '<i class="fas fa-home ms-2"></i>';
+        else if (href.includes('start')) iconHTML = '<i class="fas fa-play ms-2"></i>';
+        else if (href.includes('train')) iconHTML = '<i class="fas fa-running ms-2"></i>';
+        else if (href.includes('progress')) iconHTML = '<i class="fas fa-chart-line ms-2"></i>';
+        else if (href.includes('nutrition')) iconHTML = '<i class="fas fa-apple-alt ms-2"></i>';
+        else if (href.includes('plans')) iconHTML = '<i class="fas fa-calendar-alt ms-2"></i>';
+
+        iconSpan.innerHTML = iconHTML;
+      }
+    });
+  });
+
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
+
+
+
+ 
+
+
+
+  </body>
+</html>
+
+

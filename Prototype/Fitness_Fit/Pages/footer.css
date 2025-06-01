@@ -1,0 +1,67 @@
+.footer {
+      background-color: #ffffff;
+      border-top: 8px solid #3B82F6;
+      padding: 40px 20px;
+      font-family: "Nunito", sans-serif;
+      color: #003b5c;
+    }
+
+    .footer a {
+      color: #003b5c;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-logo img {
+      height: 80px;
+    }
+
+    .footer-title {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .social-icons a {
+      font-size: 1.3rem;
+      margin-right: 12px;
+      color: #003b5c;
+      background: #f3f4f6;
+      border-radius: 50%;
+      padding: 8px;
+      display: inline-block;
+    }
+
+    .social-icons a:hover {
+      background: #3B82F6;
+      color: white;
+    }
+
+    .store-badge {
+      display: block;
+      margin-bottom: 12px;
+      max-width: 180px;
+    }
+
+    .app-section {
+      border: 5px solid #cbd5e1;
+      border-radius: 20px;
+      padding: 10px;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .footer .row > div {
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      .app-section {
+        margin: 0 auto;
+        max-width: 300px;
+      }
+    }
