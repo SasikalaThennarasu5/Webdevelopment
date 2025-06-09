@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grocery Navbar</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="headerfooter.css">
+  
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      background-color: #f8f9fa;
+    }
+
+    .info-strip {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: start;
+      background-color: #f8f9fa;
+      padding: 0;
+    }
+
+    .contact-banner {
+      background-color: #ff7c08;
+      color: white;
+      padding: 20px 30px;
+      font-weight: 700;
+      font-size: 22px;
+      flex-shrink: 0;
+      position: relative;
+      clip-path: polygon(0 0, 88% 0, 100% 100%, 0% 100%);
+      width: 360px;
+    }
+
+    .contact-banner span {
+      display: block;
+      font-weight: 400;
+      font-size: 18px;
+    }
+
+    .features-container {
+      display: flex;
+      gap: 50px;
+      align-items: center;
+      padding: 20px 30px;
+      flex-wrap: wrap;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      max-width: 220px;
+    }
+
+    .icon-circle {
+      background-color: #d5e5cf;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .icon-circle img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .feature-text p {
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    .feature-text p:first-child {
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .feature-text p:last-child {
+      font-size: 14px;
+      color: #555;
+    }
+
+    @media (max-width: 768px) {
+      .info-strip {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .features-container {
+        justify-content: center;
+        padding: 20px;
+        gap: 30px;
+      }
+
+      .contact-banner {
+        clip-path: none;
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    
+    .footer {
+      background-color: #012040;
+      color: white;
+      padding: 40px 20px 20px;
+    }
+
+    .footer h5 {
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .footer a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer .logo-text {
+      color: #4eb528;
+      font-weight: 700;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    .footer .description {
+      font-size: 15px;
+      color: #ccc;
+      text-align: center;
+      max-width: 320px;
+      margin: 10px auto 20px;
+    }
+
+    .footer .footer-bottom {
+      text-align: center;
+      color: #cbd5e1;
+      padding-top: 20px;
+      font-size: 16px;
+    }
+
+    .footer .footer-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .footer-logo img {
+      width: 150px;
+      margin-bottom: 10px;
+    }
+
+    @media (min-width: 768px) {
+      .footer .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      .footer .description {
+        text-align: left;
+        margin: 0;
+      }
+
+      .footer .logo-text {
+        text-align: left;
+      }
+
+      .footer-logo {
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+<!--Footer-->
+  <div class="info-strip">
+    <!-- Left Orange Contact Banner -->
+    <div class="contact-banner">
+      Get in Touch with us
+      <span>+91 91010 90000</span>
+    </div>
+
+    <!-- Right Features Section -->
+    <div class="features-container">
+      <div class="feature-item">
+        <div class="icon-circle">
+          <img src="./assets/images/home/free shipping icon.png" alt="Free Shipping">
+        </div>
+        <div class="feature-text">
+          <p>Free Shipping</p>
+          <p>For Orders Above 500</p>
+        </div>
+      </div>
+
+      <div class="feature-item">
+        <div class="icon-circle">
+          <img src="./assets/images/home/fresh produce icon.png" alt="Fresh Produce">
+        </div>
+        <div class="feature-text">
+          <p>Fresh Produce</p>
+          <p>Guaranteed Product Warranty</p>
+        </div>
+      </div>
+
+      <div class="feature-item">
+        <div class="icon-circle">
+          <img src="./assets/images/home/safety icon.png" alt="Safety">
+        </div>
+        <div class="feature-text">
+          <p>100% Safety & Security</p>
+          <p>Your Data is Highly Secured</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content row gy-4">
+        <!-- Logo & Description -->
+        <div class="col-md-4 footer-logo">
+          <img src="./assets/images/home/logo.png"  alt="Logo">
+          
+          <p class="description">
+            Fresh groceries, particularly fruits, vegetables,<br>
+            whole grains, and lean proteins, play a crucial<br>
+            role in nourishing our bodies and promoting<br>
+            overall well-being
+          </p>
+        </div>
+
+        <!-- Navigation -->
+        <div class="col-md-4">
+          <h5>NAVIGATE</h5>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+          <a href="#">How to Order</a>
+          <a href="#">About Us</a>
+        </div>
+
+        <!-- G-Store Info -->
+        <div class="col-md-4">
+          <h5>G-STORE</h5>
+          <p>Reg: T21542GST548</p>
+          <p>TIN: 14578452884</p>
+          <p>Email: groceries at doorstep@gmail.com</p>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom mt-4">
+        Copyrights 2022© Groceries At Doorstep Ltd
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

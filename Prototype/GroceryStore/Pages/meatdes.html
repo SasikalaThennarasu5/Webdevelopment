@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grocery Navbar</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!--  Open Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="headerfooter.css">
+    <style>
+        body {
+            background-color: #f5f7fa;
+            font-family: 'Open Sans', sans-serif;
+         font-weight: bolder;
+         font-size:larger;
+            padding: 20px;
+            color: #222;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .product-image {
+            width: 100%;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .thumbnail {
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            transition: border 0.3s ease, transform 0.3s ease;
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .thumbnail.active {
+            border-color: #28a745;
+            transform: scale(1.05);
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .quantity-selector input {
+            width: 60px;
+            text-align: center;
+        }
+
+        .add-to-cart {
+            background-color: #28a745;
+            color: white;
+            padding: 12px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-to-cart:hover {
+            background-color: #218838;
+        }
+
+        .shipping-info {
+            font-size: 0.9rem;
+            color: #555;
+            margin-top: 15px;
+        }
+
+        .shipping-info i {
+            color: #28a745;
+            margin-right: 8px;
+        }
+
+        .policy-link {
+            color: #28a745;
+            font-size: 0.9rem;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        /* Description styles matching your example */
+        .description-section {
+            max-width: 700px;
+            margin-top: 20px;
+            color: #222;
+        }
+
+        .description-section h5 {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-top: 16px;
+            margin-bottom: 8px;
+        }
+
+        .description-section ul {
+            padding-left: 1.2rem;
+            margin-bottom: 0;
+        }
+
+        .description-section ul li {
+            margin-bottom: 8px;
+        }
+
+        .description-title {
+            font-weight: bold;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            color: #222;
+            border-bottom: 1px solid #aaa;
+            display: inline-block;
+            padding-bottom: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- header -->
+  <header class="header-section">
+  <!-- Top Green Banner -->
+  <div class="top-banner text-center py-2">
+    <span class="text-white fw-semibold">Fresh & Organic produce from our farmers to your kitchen</span>
+  </div>
+
+  <!-- Main Container -->
+  <div class="container py-3">
+    <div class="row align-items-center text-center text-lg-start">
+
+      <!-- Logo Column -->
+      <div class="col-lg-2 mb-3 mb-lg-0 d-flex flex-column align-items-center">
+        <img class="logoimg" src="./assets/images/home/logo.png" />
+        
+      </div>
+
+      <!-- Search Bar Column -->
+      <div class="col-lg-7 mb-3 mb-lg-0">
+        <form class="d-flex w-100" role="search">
+          <input class="form-control rounded-0 border-end-0" type="search" placeholder="Search for products" aria-label="Search">
+          <button class="btn btn-warning rounded-0 border-start-0" type="submit">
+            <i class="fas fa-search me-1"></i> Search
+          </button>
+        </form>
+      </div>
+
+      <!-- Empty Column to Align -->
+      <div class="col-lg-3 d-none d-lg-block"></div>
+    </div>
+
+    <!-- Nav Links Row -->
+    <div class="row mt-3">
+      <div class="col d-flex justify-content-center gap-4 flex-wrap align-items-center">
+        <a href="home.html" class="nav-link fw-semibold">Home</a>
+        <a href="category.html" class="nav-link fw-semibold">Categories</a>
+        <a href="bestsales.html" class="nav-link fw-semibold">Best Sales</a>
+        <a href="blog.html" class="nav-link fw-semibold">Blogs</a>
+        
+        <a href="addtocart.html" class="nav-link">
+          <img class="logoimg" src="./assets/images/home/cart icon.png" />
+        </a>
+        <a href="registernow.html" class="btn btn-success text-white fw-semibold px-3">Register Now</a>
+      </div>
+    </div>
+  </div>
+  </header>
+
+    <div class="container">
+
+        <!-- Product Card -->
+        <div class="row product-card">
+            <!-- Left Column -->
+            <div class="col-md-6">
+                <img id="mainImage" src="./assets/images/meat/meat des 1.png" class="product-image mb-3" alt="Radish">
+
+                <!-- Thumbnails -->
+                <div class="d-flex align-items-center mt-3 flex-wrap gap-2">
+                    <img src="./assets/images/meat/meat des 1.png" class="thumbnail active" alt="Radish Thumbnail">
+                    <img src="./assets/images/meat/meat des 2.png" class="thumbnail" alt="Radish Thumbnail 2">
+                    <img src="./assets/images/meat/meat des 3.png" class="thumbnail" alt="Radish Thumbnail 3">
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="col-md-6">
+                <h3 class="mb-2">Radish</h3>
+                <p>Each of our products are hand-selected from the local farmers and helps you improve good health</p>
+                <h4 class="text-success mb-3">₹ 120</h4>
+                <p><strong>TAX INCLUDED | SHIPPING CALCULATED AT CHECKOUT</strong></p>
+
+                <!-- Quantity Selector -->
+                <div class="quantity-selector mb-3">
+                    <label for="quantity" class="form-label mb-0">Quantity:</label>
+                    <button class="btn btn-outline-secondary btn-sm" id="decreaseQty">-</button>
+                    <input type="number" id="quantity" value="1" min="1" />
+                    <button class="btn btn-outline-secondary btn-sm" id="increaseQty">+</button>
+                </div>
+
+                <!-- Size / Weight Selector -->
+                <div class="mb-3">
+                    <label class="form-label mb-1">Quantity:</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="size" id="size250" value="250g" checked>
+                        <label class="form-check-label" for="size250">250g</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="size" id="size500" value="500g">
+                        <label class="form-check-label" for="size500">500g</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="size" id="size1kg" value="1kg">
+                        <label class="form-check-label" for="size1kg">1kg</label>
+                    </div>
+                </div>
+
+                <!-- Add to Cart -->
+                <button class="add-to-cart mb-3" id="addToCart">Add to Cart</button>
+
+                <!-- Shipping Info -->
+                <div class="shipping-info">
+                    <p><i class="bi bi-truck"></i> Free shipping on all orders over 450 rupees</p>
+                    <p><i class="bi bi-clock"></i> Delivery in 3-4 working days shipping & return</p>
+                    <p class="policy-link">See delivery and return policies</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Description Section -->
+        <div class="description-section">
+            <div class="description-title">DESCRIPTION</div>
+
+            <p>
+                Strawberries are often described as sweet, juicy, and bright red berries with a fragrant, fruity aroma.
+                They are typically sold fresh in containers or boxes and are a popular addition to various recipes and snacks.
+            </p>
+
+            <p>
+                Here’s a more detailed look at how strawberries might be described in a grocery store setting:
+            </p>
+
+            <h5>Appearance:</h5>
+            <ul>
+                <li>Color: Bright red, with variations depending on the variety.</li>
+                <li>Shape: Typically round or oval, with a smooth surface.</li>
+                <li>Seeds: The seeds are small, whitish or brownish specks that cover the surface of the fruit.</li>
+                <li>Freshness: Shiny, firm, and free from blemishes or mold.</li>
+            </ul>
+
+            <h5>Taste and Aroma:</h5>
+            <ul>
+                <li>Flavor: Sweet and juicy, with a slightly tart or sour note in some varieties.</li>
+                <li>Aroma: A pleasant, fruity, and fragrant aroma.</li>
+            </ul>
+
+            <h5>Nutrition:</h5>
+            <ul>
+                <li>Vitamin C: Rich in vitamin C, an important antioxidant.</li>
+                <li>Fiber: A good source of fiber.</li>
+                <li>Other nutrients: Contains other vitamins, minerals, and antioxidants.</li>
+                <li>Low in calories: A healthy and low-calorie fruit.</li>
+            </ul>
+
+            <h5>Uses:</h5>
+            <ul>
+                <li>Fresh consumption: Enjoyed as a snack or added to salads, desserts, or smoothies.</li>
+                <li>Culinary applications: Used in jams, sauces, desserts, and other dishes.</li>
+            </ul>
+
+            <h5>Storage:</h5>
+            <ul>
+                <li>Refrigeration: Should be refrigerated to maintain freshness.</li>
+                <li>Humidity: Best stored in the refrigerator at high humidity.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!--Footer-->
+  <div class="info-strip">
+    <!-- Left Orange Contact Banner -->
+    <div class="contact-banner">
+      Get in Touch with us
+      <span>+91 91010 90000</span>
+    </div>
+
+    <!-- Right Features Section -->
+    <div class="features-container">
+      <div class="feature-item">
+        <div class="icon-circle">
+          <img src="./assets/images/home/free shipping icon.png" alt="Free Shipping">
+        </div>
+        <div class="feature-text">
+          <p>Free Shipping</p>
+          <p>For Orders Above 500</p>
+        </div>
+      </div>
+
+      <div class="feature-item">
+        <div class="icon-circle">
+          <img src="./assets/images/home/fresh produce icon.png" alt="Fresh Produce">
+        </div>
+        <div class="feature-text">
+          <p>Fresh Produce</p>
+          <p>Guaranteed Product Warranty</p>
+        </div>
+      </div>
+
+      <div class="feature-item">
+        <div class="icon-circle">
+          <img src="./assets/images/home/safety icon.png" alt="Safety">
+        </div>
+        <div class="feature-text">
+          <p>100% Safety & Security</p>
+          <p>Your Data is Highly Secured</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content row gy-4">
+        <!-- Logo & Description -->
+        <div class="col-md-4 footer-logo">
+          <img src="./assets/images/home/logo.png"  alt="Logo">
+          
+          <p class="description">
+            Fresh groceries, particularly fruits, vegetables,<br>
+            whole grains, and lean proteins, play a crucial<br>
+            role in nourishing our bodies and promoting<br>
+            overall well-being
+          </p>
+        </div>
+
+        <!-- Navigation -->
+        <div class="col-md-4">
+          <h5>NAVIGATE</h5>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+          <a href="#">How to Order</a>
+          <a href="#">About Us</a>
+        </div>
+
+        <!-- G-Store Info -->
+        <div class="col-md-4">
+          <h5>G-STORE</h5>
+          <p>Reg: T21542GST548</p>
+          <p>TIN: 14578452884</p>
+          <p>Email: groceries at doorstep@gmail.com</p>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom mt-4">
+        Copyrights 2022© Groceries At Doorstep Ltd
+      </div>
+    </div>
+  </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Icons (Optional, for truck and clock icons) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Custom JS -->
+    <script>
+        // Quantity Increase/Decrease
+        document.getElementById('increaseQty').addEventListener('click', function() {
+            const qtyInput = document.getElementById('quantity');
+            qtyInput.value = parseInt(qtyInput.value) + 1;
+        });
+
+        document.getElementById('decreaseQty').addEventListener('click', function() {
+            const qtyInput = document.getElementById('quantity');
+            if (parseInt(qtyInput.value) > 1) {
+                qtyInput.value = parseInt(qtyInput.value) - 1;
+            }
+        });
+
+        // Add to Cart Button
+        document.getElementById('addToCart').addEventListener('click', function() {
+            const qty = document.getElementById('quantity').value;
+            const size = document.querySelector('input[name="size"]:checked').value;
+            alert(`Added to cart:\nRadish - ${qty} item(s), Size: ${size}`);
+        });
+
+        // Thumbnail click to change main image
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const mainImage = document.getElementById('mainImage');
+
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', function() {
+                thumbnails.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                mainImage.src = this.src;
+            });
+        });
+    </script>
+
+</body>
+</html>

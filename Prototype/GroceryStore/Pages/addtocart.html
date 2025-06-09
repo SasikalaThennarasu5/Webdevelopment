@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grocery Navbar</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="headerfooter.css">
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+        }
+        .cart-header {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 20px;
+            font-size: 24px;
+        }
+        .breadcrumb {
+            justify-content: center;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .cart-item {
+            background-color: #eaf6e8;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .cart-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .cart-item-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .qty-btn {
+            width: 30px;
+            height: 30px;
+            border: none;
+            border-radius: 50%;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 18px;
+            line-height: 1;
+        }
+        .qty-display {
+            width: 30px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .summary-box {
+            background-color: #f7fdf4;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .summary-line {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .checkout-btn {
+            width: 100%;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+        .secure-text {
+            font-size: 12px;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            color: #555;
+        }
+        .secure-text i {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<header class="header-section">
+<!-- Top Green Banner -->
+  <div class="top-banner text-center py-2">
+    <span class="text-white fw-semibold">Fresh & Organic produce from our farmers to your kitchen</span>
+  </div>
+
+  <!-- Main Container -->
+  <div class="container py-3">
+    <div class="row align-items-center text-center text-lg-start">
+
+      <!-- Logo Column -->
+      <div class="col-lg-2 mb-3 mb-lg-0 d-flex flex-column align-items-center">
+        <img class="logoimg" src="./assets/images/home/logo.png" />
+        
+      </div>
+
+      <!-- Search Bar Column -->
+      <div class="col-lg-7 mb-3 mb-lg-0">
+        <form class="d-flex w-100" role="search">
+          <input class="form-control rounded-0 border-end-0" type="search" placeholder="Search for products" aria-label="Search">
+          <button class="btn btn-warning rounded-0 border-start-0" type="submit">
+            <i class="fas fa-search me-1"></i> Search
+          </button>
+        </form>
+      </div>
+
+      <!-- Empty Column to Align -->
+      <div class="col-lg-3 d-none d-lg-block"></div>
+    </div>
+
+    <!-- Nav Links Row -->
+    <div class="row mt-3">
+      <div class="col d-flex justify-content-center gap-4 flex-wrap align-items-center">
+        <a href="home.html" class="nav-link fw-semibold">Home</a>
+        <a href="category.html" class="nav-link fw-semibold">Categories</a>
+        <a href="bestsales.html" class="nav-link fw-semibold">Best Sales</a>
+        <a href="blog.html" class="nav-link fw-semibold">Blogs</a>
+        
+        <a href="home.html" class="nav-link">
+          <img class="logoimg" src="./assets/images/home/cart icon.png" />
+        </a>
+        <a href="registernow.html" class="btn btn-success text-white fw-semibold px-3">Register Now</a>
+      </div>
+    </div>
+  </div>
+
+
+
+    <div class="container py-4">
+
+        <!-- Cart Header -->
+        <div class="cart-header">Cart</div>
+
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item text-success fw-bold">BAG</li>
+                <li class="breadcrumb-item active" aria-current="page">ADDRESS</li>
+                <li class="breadcrumb-item active" aria-current="page">PAYMENT</li>
+            </ol>
+        </nav>
+
+        </header>
+
+        <!-- Cart Content -->
+        <div class="row">
+            <!-- Left side - Items -->
+            <div class="col-lg-8">
+                <!-- Cart Item Template -->
+                <div class="cart-item d-flex align-items-center">
+                    <img src="./assets/images/addtocart/cart image 1.png" alt="Lady's Finger">
+                    <div class="ms-3 flex-grow-1">
+                        <div class="text-muted small">Vegetables</div>
+                        <div class="cart-item-title">LADY'S FINGER</div>
+                        <div>₹ 80</div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <button class="qty-btn" onclick="decreaseQty(0)">-</button>
+                        <div class="qty-display mx-2" id="qty-0">1</div>
+                        <button class="qty-btn" onclick="increaseQty(0)">+</button>
+                    </div>
+                </div>
+
+                <div class="cart-item d-flex align-items-center">
+                    <img src="./assets/images/addtocart/cart image 2.png" alt="Carrots">
+                    <div class="ms-3 flex-grow-1">
+                        <div class="text-muted small">Vegetables</div>
+                        <div class="cart-item-title">CARROTS</div>
+                        <div>₹ 65</div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <button class="qty-btn" onclick="decreaseQty(1)">-</button>
+                        <div class="qty-display mx-2" id="qty-1">1</div>
+                        <button class="qty-btn" onclick="increaseQty(1)">+</button>
+                    </div>
+                </div>
+
+                <div class="cart-item d-flex align-items-center">
+                    <img src="./assets/images/addtocart/cart image 3.png" alt="Croissant">
+                    <div class="ms-3 flex-grow-1">
+                        <div class="text-muted small">Snacks & Beverage</div>
+                        <div class="cart-item-title">CROISSANT</div>
+                        <div>₹ 140</div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <button class="qty-btn" onclick="decreaseQty(2)">-</button>
+                        <div class="qty-display mx-2" id="qty-2">1</div>
+                        <button class="qty-btn" onclick="increaseQty(2)">+</button>
+                    </div>
+                </div>
+
+                <div class="cart-item d-flex align-items-center">
+                    <img src="./assets/images/addtocart/cart image 4.png" alt="Plums">
+                    <div class="ms-3 flex-grow-1">
+                        <div class="text-muted small">Frozen Food</div>
+                        <div class="cart-item-title">PLUMS</div>
+                        <div>₹ 220</div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <button class="qty-btn" onclick="decreaseQty(3)">-</button>
+                        <div class="qty-display mx-2" id="qty-3">1</div>
+                        <button class="qty-btn" onclick="increaseQty(3)">+</button>
+                    </div>
+                </div>
+
+                <div class="cart-item d-flex align-items-center">
+                    <img src="./assets/images/addtocart/cart image 5.png" alt="Country Eggs">
+                    <div class="ms-3 flex-grow-1">
+                        <div class="text-muted small">Diary & Eggs</div>
+                        <div class="cart-item-title">COUNTRY EGGS</div>
+                        <div>₹ 120</div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <button class="qty-btn" onclick="decreaseQty(4)">-</button>
+                        <div class="qty-display mx-2" id="qty-4">1</div>
+                        <button class="qty-btn" onclick="increaseQty(4)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right side - Summary -->
+            <div class="col-lg-4 mt-4 mt-lg-0">
+                <div class="summary-box">
+                    <div class="summary-line">
+                        <span>Subtotal</span>
+                        <span id="subtotal">₹ 4580</span>
+                    </div>
+                    <div class="summary-line">
+                        <span>Delivery Charges</span>
+                        <span>₹ 0</span>
+                    </div>
+                    <div class="summary-line">
+                        <span>Discount</span>
+                        <span>- ₹ 220</span>
+                    </div>
+                    <hr>
+                    <div class="summary-line fw-bold fs-5">
+                        <span>TOTAL</span>
+                        <span id="total">₹ 4360</span>
+                    </div>
+                    <button class="checkout-btn mt-3">CHECKOUT</button>
+                    <div class="secure-text mt-2">
+                        <i class="bi bi-lock-fill"></i> 100% Secure Payments
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Footer-->
+  <div class="info-strip">
+    <!-- Left Orange Contact Banner -->
+    <div class="contact-banner">
+      Get in Touch with us
+      <span>+91 91010 90000</span>
+    </div>
+
+    <!-- Right Features Section -->
+    <div class="features-container">
+      <div class="feature-item">
+        <div class="icon-circle">
+          <img src="./assets/images/home/free shipping icon.png" alt="Free Shipping">
+        </div>
+        <div class="feature-text">
+          <p>Free Shipping</p>
+          <p>For Orders Above 500</p>
+        </div>
+      </div>
+
+      <div class="feature-item">
+        <div class="icon-circle">
+          <img src="./assets/images/home/fresh produce icon.png" alt="Fresh Produce">
+        </div>
+        <div class="feature-text">
+          <p>Fresh Produce</p>
+          <p>Guaranteed Product Warranty</p>
+        </div>
+      </div>
+
+      <div class="feature-item">
+        <div class="icon-circle">
+          <img src="./assets/images/home/safety icon.png" alt="Safety">
+        </div>
+        <div class="feature-text">
+          <p>100% Safety & Security</p>
+          <p>Your Data is Highly Secured</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content row gy-4">
+        <!-- Logo & Description -->
+        <div class="col-md-4 footer-logo">
+          <img src="./assets/images/home/logo.png"  alt="Logo">
+          
+          <p class="description">
+            Fresh groceries, particularly fruits, vegetables,<br>
+            whole grains, and lean proteins, play a crucial<br>
+            role in nourishing our bodies and promoting<br>
+            overall well-being
+          </p>
+        </div>
+
+        <!-- Navigation -->
+        <div class="col-md-4">
+          <h5>NAVIGATE</h5>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+          <a href="#">How to Order</a>
+          <a href="#">About Us</a>
+        </div>
+
+        <!-- G-Store Info -->
+        <div class="col-md-4">
+          <h5>G-STORE</h5>
+          <p>Reg: T21542GST548</p>
+          <p>TIN: 14578452884</p>
+          <p>Email: groceries at doorstep@gmail.com</p>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom mt-4">
+        Copyrights 2022© Groceries At Doorstep Ltd
+      </div>
+    </div>
+  </footer>
+
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Icons CDN for Lock Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- JavaScript Logic -->
+    <script>
+        const prices = [80, 65, 140, 220, 120];
+        const quantities = [1, 1, 1, 1, 1];
+
+        function updateTotals() {
+            let subtotal = 0;
+            for (let i = 0; i < prices.length; i++) {
+                subtotal += prices[i] * quantities[i];
+            }
+            document.getElementById('subtotal').innerText = `₹ ${subtotal}`;
+            const discount = 220;
+            const total = subtotal - discount;
+            document.getElementById('total').innerText = `₹ ${total}`;
+        }
+
+        function increaseQty(index) {
+            quantities[index]++;
+            document.getElementById(`qty-${index}`).innerText = quantities[index];
+            updateTotals();
+        }
+
+        function decreaseQty(index) {
+            if (quantities[index] > 1) {
+                quantities[index]--;
+                document.getElementById(`qty-${index}`).innerText = quantities[index];
+                updateTotals();
+            }
+        }
+
+        // Initial calculation
+        updateTotals();
+    </script>
+</body>
+</html>

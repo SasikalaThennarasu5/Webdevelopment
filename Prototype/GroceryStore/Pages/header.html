@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grocery Navbar</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!--  Open Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="headerfooter.css">
+</head>
+
+<body>
+<header class="header-section">
+  <!-- Top Green Banner -->
+  <div class="top-banner text-center py-2">
+    <span class="text-white fw-semibold">Fresh & Organic produce from our farmers to your kitchen</span>
+  </div>
+
+  <!-- Main Container -->
+  <div class="container py-3">
+    <div class="row align-items-center text-center text-lg-start">
+
+      <!-- Logo Column -->
+      <div class="col-lg-2 mb-3 mb-lg-0 d-flex flex-column align-items-center">
+        <img class="logoimg" src="./assets/images/home/logo.png" />
+        
+      </div>
+
+      <!-- Search Bar Column -->
+      <div class="col-lg-7 mb-3 mb-lg-0">
+        <form class="d-flex w-100" role="search">
+          <input class="form-control rounded-0 border-end-0" type="search" placeholder="Search for products" aria-label="Search">
+          <button class="btn btn-warning rounded-0 border-start-0" type="submit">
+            <i class="fas fa-search me-1"></i> Search
+          </button>
+        </form>
+      </div>
+
+      <!-- Empty Column to Align -->
+      <div class="col-lg-3 d-none d-lg-block"></div>
+    </div>
+
+    <!-- Nav Links Row -->
+    <div class="row mt-3">
+      <div class="col d-flex justify-content-center gap-4 flex-wrap align-items-center">
+        <a href="#" class="nav-link fw-semibold">Home</a>
+        <a href="#" class="nav-link fw-semibold">Categories</a>
+        <a href="#" class="nav-link fw-semibold">Best Sales</a>
+        <a href="#" class="nav-link fw-semibold">Blogs</a>
+        
+        <a href="#" class="nav-link">
+          <img class="logoimg" src="./assets/images/home/cart icon.png" />
+        </a>
+        <a href="#" class="btn btn-success text-white fw-semibold px-3">Register Now</a>
+      </div>
+    </div>
+  </div>
+  </header>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
